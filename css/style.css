@@ -1,17 +1,251 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 5 | @import "./components/buttons";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   sass\main.scss 5:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 5 \2502  @import \"./components/buttons\";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\main.scss 5:9  root stylesheet";
+/* Responsive */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 40px;
+}
+.header__logo {
+  width: 270px;
+  height: 95px;
+}
+
+/*Section Footer*/
+.footer {
+  background-color: #383737;
+  color: #ffffff;
+  padding: 1.5rem 1rem 1.5rem 3rem;
+  font-size: 1rem;
+  margin-top: 3rem;
+}
+.footer__logo {
+  padding-bottom: 0.8rem;
+  width: 10rem;
+}
+.footer__div {
+  padding-bottom: 0.6rem;
+}
+.footer__div a {
+  color: #ffffff;
+}
+.footer i.fas.fa-hands-helping {
+  font-size: 0.6rem;
+  padding-right: 0.8rem;
+}
+.footer i.fas.fa-utensils {
+  font-size: 0.8rem;
+  padding-right: 1rem;
+}
+
+.mb-3 {
+  margin-top: 20px;
+}
+
+.form-control--modif {
+  margin-right: -41px;
+  background-color: #e7e7e7;
+  padding: 15px;
+}
+
+.btn-outline-secondary {
+  border: none;
+}
+
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+  border-radius: 0.25rem;
+}
+
+.filtres {
+  text-decoration: none;
+  color: black;
+}
+.filtres__select {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.filtres__select__selected {
+  margin: 0.5rem 0 1rem 0;
+  padding: 6px 8px;
+  border-radius: 5px;
+  background-color: #3282f7;
+  color: #ffffff;
+  width: 107px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.filtres__select__selected .fa-times-circle {
+  padding: 5px;
+  margin-left: 10px;
+}
+.filtres__ingredients {
+  background-color: #3282f7;
+  width: 170px;
+  height: 70px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-right: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+.filtres__appareil {
+  background-color: #68d9a4;
+  width: 170px;
+  height: 70px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-right: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+.filtres__ustensiles {
+  background-color: #ed6454;
+  width: 170px;
+  height: 70px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-right: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#recettes {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.figure {
+  height: 20rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+  min-width: 20%;
+}
+.figure__img {
+  height: 10rem;
+  width: 100%;
+  background-color: #c7bebe;
+  border-radius: 5px 5px 0px 0px;
+  padding: 1px;
+}
+.figure .figcaption {
+  background-color: #e7e7e7;
+  height: 10rem;
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  padding: 20px;
+}
+.figure .figcaption__titre {
+  font-size: 18px;
+}
+.figure .figcaption__temps {
+  margin-top: -2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 18px;
+}
+.figure .figcaption__temps .far {
+  margin-right: 10px;
+}
+.figure .figcaption__ingredients {
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  width: 9rem;
+  height: 4.5rem;
+  font-size: 12px;
+}
+.figure .figcaption__description {
+  width: 10rem;
+  font-size: 0.9rem;
+  line-height: 12px;
+  height: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: right;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Media Queries mobile*/
+@media screen and (max-width: 767px) {
+  .filtres__select {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .filtres__select__selected {
+    margin: 1%;
+    margin-left: 0;
+    padding: 1px 8px;
+    border-radius: 5px;
+    background-color: #3282f7;
+  }
+  .filtres__select__selected .fa-times-circle {
+    padding: 5px;
+  }
+  .filtres__ingredients {
+    margin: 0.5rem 1rem 1rem 0;
+  }
+  .filtres__appareil {
+    margin-bottom: 1rem;
+  }
+  .filtres__ustensiles {
+    margin-bottom: 1rem;
+  }
+
+  #recettes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 0rem;
+  }
+}
+/*Media Queries tablette*/
+@media screen and (min-width: 768px) {
+  #recettes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 0rem;
+  }
+}
+/*Media Queries desktop*/
+@media screen and (min-width: 1024px) {
+  #recettes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 0px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

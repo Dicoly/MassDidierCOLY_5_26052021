@@ -1,0 +1,58 @@
+/*Media Queries mobile*/
+@media screen and (max-width: $breakpoint-mobile) {
+    .filtres {
+        &__select {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            &__selected {
+                margin: 1%;
+                margin-left: 0;
+                padding: 1px 8px;
+                border-radius: 5px;
+                background-color: $color-ingredients;
+                .fa-times-circle {
+                    padding: 5px;
+                }
+            }
+        }
+        &__ingredients {
+            margin: 0.5rem 1rem 1rem 0;
+        }
+        &__appareil {
+            margin-bottom: 1rem;
+        }
+        &__ustensiles {
+            margin-bottom: 1rem;
+        }
+    }
+    #recettes {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 1rem;
+        grid-row-gap: 0rem;
+    }
+}
+
+/*Media Queries tablette*/
+@media screen and (min-width: $breakpoint-tablette) {
+    #recettes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 0rem;
+    }
+}
+
+/*Media Queries desktop*/
+@media screen and (min-width: $breakpoint-desktop) { 
+    #recettes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 2.5rem;
+        grid-row-gap: 0px;
+    }
+}

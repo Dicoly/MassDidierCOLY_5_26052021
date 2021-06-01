@@ -6,8 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="Description" content="vos recettes de cuisine"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+    <header class="header">
+        <img src="images/logo/logo.SVG" alt="logo" class="header__logo">
+    </header>
+    <div class="container">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control form-control--modif" placeholder="Rechercher un ingredient, appareil, ustensiles ou une recette" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="filtres">
+            <div class="filtres__select">
+                <div class="filtres__select__selected">Coco<i class="far fa-times-circle"></i></div>
+            </div>
+            <select class="filtres__ingredients">
+                <option value="">Ingredients</option>
+                <option value="Lait de coco">Lait de coco</option>
+                <option value="Jus de citron">Jus de citron</option>
+                <option value="Crème de coco">Crème de coco</option>
+                <option value="Sucre">Sucre</option>
+                <option value="Glaçons">Glaçons</option>
+            </select>
+            <select class="filtres__appareil">
+                <option value="">Appareil</option>
+                <option value="Blender">Blender</option>
+            </select>
+            <select class="filtres__ustensiles">
+                <option value="">Ustensiles</option>
+                <option value="cuillère à Soupe">Cuillère à Soupe</option>
+                <option value="verres">Verres</option>
+                <option value="presse citron">Presse citron</option>
+            </select>
+        </div>
+        <article id="recettes">
+            <figure class="figure">
+                <div class="figure__img">
+                    <img src="" alt="" title="">
+                </div>
+                <figcaption class="figcaption">
+                    <p class="figcaption__titre">Limonade de Coco</p>
+                    <p class="figcaption__temps"><i class="far fa-clock"></i><strong> 10 min </strong></p>
+                    <p class="figcaption__ingredients">Ingredients</p>
+                    <p class="figcaption__description">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                </figcaption>
+            </figure>
+            <figure class="figure">
+                <div class="figure__img">
+                    <img src="" alt="" title="">
+                </div>
+                <figcaption class="figcaption">
+                    <p class="figcaption__titre">Limonade de Coco</p>
+                    <p class="figcaption__temps"><i class="far fa-clock"></i><strong> 10 min </strong></p>
+                    <p class="figcaption__ingredients">Ingredients</p>
+                    <p class="figcaption__description">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                </figcaption>
+            </figure>
+            <figure class="figure">
+                <div class="figure__img">
+                    <img src="" alt="" title="">
+                </div>
+                <figcaption class="figcaption">
+                    <p class="figcaption__titre">Limonade de Coco</p>
+                    <p class="figcaption__temps"><i class="far fa-clock"></i><strong> 10 min </strong></p>
+                    <p class="figcaption__ingredients">Ingredients</p>
+                    <p class="figcaption__description">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                </figcaption>
+            </figure>
+            <figure class="figure">
+                <div class="figure__img">
+                    <img src="" alt="" title="">
+                </div>
+                <figcaption class="figcaption">
+                    <p class="figcaption__titre">Limonade de Coco</p>
+                    <p class="figcaption__temps"><i class="far fa-clock"></i><strong> 10 min </strong></p>
+                    <p class="figcaption__ingredients">Ingredients</p>
+                    <p class="figcaption__description">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                </figcaption>
+            </figure>
+            <figure class="figure">
+                <div class="figure__img">
+                    <img src="" alt="" title="">
+                </div>
+                <figcaption class="figcaption">
+                    <p class="figcaption__titre">Limonade de Coco</p>
+                    <p class="figcaption__temps"><i class="far fa-clock"></i><strong> 10 min </strong></p>
+                    <p class="figcaption__ingredients">Ingredients</p>
+                    <p class="figcaption__description">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                </figcaption>
+            </figure>
+            <figure class="figure">
+                <div class="figure__img">
+                    <img src="" alt="" title="">
+                </div>
+                <figcaption class="figcaption">
+                    <p class="figcaption__titre">Limonade de Coco</p>
+                    <p class="figcaption__temps"><i class="far fa-clock"></i><strong> 10 min </strong></p>
+                    <p class="figcaption__ingredients">Ingredients</p>
+                    <p class="figcaption__description">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                </figcaption>
+            </figure>
+        </article>
+    </div>
+    <!--Section Footer-->
+    <footer class="footer">
+        <img class="footer__logo" src="images/logo/logo.SVG" alt="logo">
+        <div class="footer__div"><a href="#proposez"><i class="fas fa-utensils"></i>Proposer un restaurant</a></div>
+        <div class="footer__div"><a href="#devenir"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></div>
+        <div class="footer__div"><a href="#mention">Mentions légals</a></div>
+        <div class="footer__div"><a href="mailto:contact@ohmyfood.com">Contact</a></div>
+    </footer>
 </body>
 </html>

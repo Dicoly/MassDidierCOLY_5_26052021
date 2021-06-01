@@ -1,0 +1,13 @@
+//Section Header*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 40px;
+    &__logo {
+        width: 270px;
+        height: 95px;
+    }
+}

@@ -1,0 +1,131 @@
+@mixin filtres {
+    width: 170px;
+    height: 70px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-right: 1rem;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    color: $color-white;
+}
+
+.mb-3 {
+    margin-top: 20px;
+}
+
+.form-control--modif {
+    margin-right: -41px;
+    background-color: $color-shadow;
+    padding: 15px;
+}
+
+.btn-outline-secondary {
+    border: none;
+}
+
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-radius: 0.25rem;
+}
+
+.filtres {
+    text-decoration: none;
+    color: $color-black;
+    &__select {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &__selected {
+            margin: 0.5rem 0 1rem 0;
+            padding: 6px 8px;
+            border-radius: 5px;
+            background-color: $color-ingredients;
+            color: $color-white;
+            width: 107px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            .fa-times-circle {
+                padding: 5px;
+                margin-left: 10px; 
+            }
+        }
+    }
+    &__ingredients {
+        background-color: $color-ingredients;
+        @include filtres; 
+    }
+    &__appareil {
+        background-color: $color-appareil;
+        @include filtres;
+    }
+    &__ustensiles {
+        background-color: $color-ustensiles;
+        @include filtres;
+    }
+}
+
+#recettes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.figure {
+    height: 20rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    min-width: 20%;
+    &__img {
+        height: 10rem;
+        width: 100%;
+        background-color: $color-inactive;
+        border-radius: 5px 5px 0px 0px;
+        padding: 1px;
+    }
+    .figcaption {
+        background-color: $color-shadow;
+        height: 10rem;
+        width: 100%;
+        border-radius: 0px 0px 5px 5px;
+        padding: 20px;
+        &__titre {
+            font-size: 18px;
+        }
+        &__temps {
+            margin-top: -2.5rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 18px;
+            .far {
+                margin-right: 10px;
+            }
+        }
+        &__ingredients {
+            position: absolute;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            width: 9rem;
+            height: 4.5rem;
+            font-size: 12px;
+        }
+        &__description {
+            width: 10rem;
+            font-size: 0.9rem;
+            line-height: 12px;
+            height: 5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            float: right;
+            font-size: 12px;
+            font-family: "Roboto", sans-serif;
+        }  
+    }
+}
