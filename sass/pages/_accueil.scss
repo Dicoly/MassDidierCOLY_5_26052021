@@ -11,6 +11,10 @@
     color: $color-white;
 }
 
+.main {
+    margin: 0 5rem;
+}
+
 .mb-3 {
     margin-top: 20px;
 }
@@ -23,6 +27,9 @@
 
 .btn-outline-secondary {
     border: none;
+    .fa-search {
+        color: $color-black;
+    }
 }
 
 .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {

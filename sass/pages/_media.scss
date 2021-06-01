@@ -36,7 +36,7 @@
 }
 
 /*Media Queries tablette*/
-@media screen and (min-width: $breakpoint-tablette) {
+@media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablette) {
     #recettes {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -48,11 +48,7 @@
 
 /*Media Queries desktop*/
 @media screen and (min-width: $breakpoint-desktop) { 
-    #recettes {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 2.5rem;
-        grid-row-gap: 0px;
+    .figure {
+        width: 31%;
     }
 }
