@@ -120,8 +120,7 @@ input {
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-
-ul {
+.dropdown ul {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -130,25 +129,24 @@ ul {
   padding: 1rem;
   margin-top: -5px;
 }
-ul li {
+.dropdown ul li {
   list-style-type: none;
   width: 33%;
 }
-ul li a {
+.dropdown ul li a {
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;
   font-family: "Lato", sans-serif;
 }
-ul li a:hover {
+.dropdown ul li a:hover {
   color: #000000;
   text-decoration: none;
 }
-ul li:hover {
+.dropdown ul li:hover {
   background-color: #e7e7e7;
 }
-
-.hide {
+.dropdown .hide {
   display: none;
 }
 
@@ -203,19 +201,22 @@ ul li:hover {
   background-color: #ED6454;
 }
 
-#recettes {
+#listRecipiesContainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.recettesContainer {
+  margin-right: 2.5rem;
 }
 
 .figure {
-  height: 20rem;
-  width: 100%;
-  margin-top: 1.5rem;
+  height: 23rem;
+  width: 25rem;
+  margin-top: 2.5rem;
   border-radius: 5px;
-  min-width: 20%;
 }
 .figure__img {
   height: 10rem;
@@ -226,16 +227,16 @@ ul li:hover {
 }
 .figure .figcaption {
   background-color: #e7e7e7;
-  height: 10rem;
+  height: 12rem;
   width: 100%;
   border-radius: 0px 0px 5px 5px;
-  padding: 20px;
+  padding: 15px;
 }
 .figure .figcaption__titre {
   font-size: 18px;
 }
 .figure .figcaption__temps {
-  margin-top: -2.5rem;
+  margin-top: -2rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -248,16 +249,21 @@ ul li:hover {
   position: absolute;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: bold;
-  width: 9rem;
-  height: 4.5rem;
+  height: 7rem;
   font-size: 12px;
+  padding-left: 0rem;
+}
+.figure .figcaption__ingredients ul {
+  margin-bottom: 0rem;
+}
+.figure .figcaption__ingredients li {
+  list-style-type: none;
 }
 .figure .figcaption__description {
   width: 10rem;
   font-size: 0.9rem;
   line-height: 12px;
-  height: 5rem;
+  height: 7rem;
   overflow: hidden;
   text-overflow: ellipsis;
   float: right;
@@ -278,9 +284,9 @@ ul li:hover {
   }
 }
 /*Media Queries mobile*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .main {
-    margin: 0 1rem;
+    margin: 0 2rem;
   }
 
   .filtres__select {
@@ -299,32 +305,16 @@ ul li:hover {
     padding: 5px;
   }
 
-  #recettes {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 0rem;
-  }
-}
-/*Media Queries tablette*/
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .main {
-    margin: 0 1rem;
+  #listRecipiesContainer {
+    flex-direction: column;
   }
 
-  #recettes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 0rem;
+  .recettesContainer {
+    margin-right: 0rem;
   }
-}
-/*Media Queries desktop*/
-@media screen and (min-width: 1024px) {
+
   .figure {
-    width: 31%;
+    width: 100%;
   }
 }
 

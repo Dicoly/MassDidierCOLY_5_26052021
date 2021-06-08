@@ -98,36 +98,35 @@ input {
         animation-duration: 1s;
         animation-fill-mode: forwards;
     }
-}
-
-ul {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 45vw;
-    padding: 1rem;
-    margin-top: -5px;
-    li {
-        list-style-type: none;
-        width: 33%;
-        a {
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 18px;
-            font-family: "Lato", sans-serif;
-        }
-        a:hover {
-            color: #000000;
-            text-decoration: none;
-        }
-        &:hover {
-            background-color: #e7e7e7;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 45vw;
+        padding: 1rem;
+        margin-top: -5px;
+        li {
+            list-style-type: none;
+            width: 33%;
+            a {
+                text-decoration: none;
+                color: #ffffff;
+                font-size: 18px;
+                font-family: "Lato", sans-serif;
+            }
+            a:hover {
+                color: #000000;
+                text-decoration: none;
+            }
+            &:hover {
+                background-color: #e7e7e7;
+            }
         }
     }
-}
-.hide {
-    display: none;
+    .hide {
+        display: none;
+    }
 }
 
 .inputFiltres {
@@ -182,19 +181,22 @@ ul {
 }
 
 // Les recettes cartes
-#recettes {
+#listRecipiesContainer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.recettesContainer {
+    margin-right: 2.5rem;
 }
 
 .figure {
-    height: 20rem;
-    width: 100%;
-    margin-top: 1.5rem;
+    height: 23rem;
+    width: 25rem;
+    margin-top: 2.5rem;
     border-radius: 5px;
-    min-width: 20%;
     &__img {
         height: 10rem;
         width: 100%;
@@ -204,15 +206,15 @@ ul {
     }
     .figcaption {
         background-color: $color-shadow;
-        height: 10rem;
+        height: 12rem;
         width: 100%;
         border-radius: 0px 0px 5px 5px;
-        padding: 20px;
+        padding: 15px;
         &__titre {
             font-size: 18px;
         }
         &__temps {
-            margin-top: -2.5rem;
+            margin-top: -2rem;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -225,16 +227,21 @@ ul {
             position: absolute;
             overflow: hidden;
             text-overflow: ellipsis;
-            font-weight: bold;
-            width: 9rem;
-            height: 4.5rem;
+            height: 7rem;
             font-size: 12px;
+            padding-left: 0rem;
+            ul {
+                margin-bottom: 0rem;
+            }
+            li {
+                list-style-type: none;
+            }
         }
         &__description {
             width: 10rem;
             font-size: 0.9rem;
             line-height: 12px;
-            height: 5rem;
+            height: 7rem;
             overflow: hidden;
             text-overflow: ellipsis;
             float: right;
