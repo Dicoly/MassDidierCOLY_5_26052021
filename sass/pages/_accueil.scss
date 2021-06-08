@@ -1,32 +1,27 @@
-@mixin filtres {
-    width: 170px;
-    height: 70px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    margin-right: 1rem;
-    font-family: "Lato", sans-serif;
-    font-weight: bold;
-    color: $color-white;
+.main {
+    margin: 0 4rem;
 }
 
-.main {
-    margin: 0 5rem;
+input {
+    font-family: "Lato", sans-serif;
 }
 
 .mb-3 {
-    margin-top: 20px;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .form-control--modif {
-    margin-right: -41px;
-    background-color: $color-shadow;
+    margin-right: -1px;
+    background-color: #e7e7e7;
     padding: 15px;
+    height: 4rem;
+    border: none;
 }
 
 .btn-outline-secondary {
     border: none;
+    background-color: #e7e7e7;
     .fa-search {
         color: $color-black;
     }
@@ -35,7 +30,7 @@
 .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
     border-radius: 0.25rem;
 }
-
+/* Tags selectionnés*/
 .filtres {
     text-decoration: none;
     color: $color-black;
@@ -61,20 +56,132 @@
             }
         }
     }
-    &__ingredients {
-        background-color: $color-ingredients;
-        @include filtres; 
+}
+
+.filtresContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Listes des tags*/
+.dropdown {
+    display: block;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    &--ingredients{
+        background-color: #3282F7;
+        border-radius: 0 5px 5px 5px;
     }
-    &__appareil {
-        background-color: $color-appareil;
-        @include filtres;
+    
+    &--appareil{
+        background-color: #68D9A4;
+        border-radius: 0 5px 5px 5px;
     }
-    &__ustensiles {
-        background-color: $color-ustensiles;
-        @include filtres;
+    
+    &--ustensiles{
+        background-color: #ED6454;
+        border-radius: 0 5px 5px 5px;
+    }
+    .fa-chevron-down {
+        color: white;
+    }
+    .input-group {
+        width: auto;
+        .fa-chevron-down {
+            animation-name: btnFilt;
+            animation-duration: 0.5s;
+            animation-fill-mode: backwards;
+        } 
+    }
+    .show .fa-chevron-down{
+        animation-name: btnFiltres;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
 }
 
+ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 45vw;
+    padding: 1rem;
+    margin-top: -5px;
+    li {
+        list-style-type: none;
+        width: 33%;
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            font-family: "Lato", sans-serif;
+        }
+        a:hover {
+            color: #000000;
+            text-decoration: none;
+        }
+        &:hover {
+            background-color: #e7e7e7;
+        }
+    }
+}
+.hide {
+    display: none;
+}
+
+.inputFiltres {
+    height: 4rem;
+    padding: 0px 15px;
+    border: none;
+    font-size: 18px;
+    color: #ffffff;
+    flex-grow: 1;
+    width: 8.2rem;
+    &::placeholder {
+        color: #ffffff;
+        font-size: 18px;
+    }
+    &:focus-visible {
+        outline: 0;
+    }
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+/* filtres Ingredients*/
+.filtres--ingredients {
+    background-color: #3282f7;
+    border-radius: 5px;
+    border: none;
+    .inputIngredients {
+        background-color: #3282f7;
+    }
+}
+
+/* filtres Appareil*/
+.filtres--appareil {
+    background-color: #68D9A4;
+    border-radius: 5px;
+    border: none;
+    .inputAppareil {
+        background-color: #68D9A4;
+    }
+}
+
+/* filtres Ustensiles*/
+.filtres--ustensiles {
+    background-color: #ED6454;
+    border-radius: 5px;
+    border: none;
+    .inputUstensiles {
+        background-color: #ED6454;
+    }
+}
+
+// Les recettes cartes
 #recettes {
     display: flex;
     flex-wrap: wrap;
@@ -134,5 +241,18 @@
             font-size: 12px;
             font-family: "Roboto", sans-serif;
         }  
+    }
+}
+
+@keyframes btnFilt {
+    0% {
+        transform: rotate(0deg);
+        transition: 0.5s;
+    }
+}
+@keyframes btnFiltres{
+    100% {
+        transform: rotate(180deg);
+        transition: 1s;
     }
 }

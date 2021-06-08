@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <title>Les Petits Plats</title>
+    <link rel="icon" type="image/png" href="images/logo/logo_img.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="Description" content="vos recettes de cuisine"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 </head>
@@ -16,33 +18,49 @@
         <img src="images/logo/logo.SVG" alt="logo" class="header__logo">
     </header>
     <main class="main">
-        <div class="input-group mb-3">
+        <div class="input-group searchPrincipaleContainer mb-3">
             <input type="text" class="form-control form-control--modif" placeholder="Rechercher un ingredient, appareil, ustensiles ou une recette" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
         </div>
+
+       <!--<div class="tagsContainer"></div>-->
+
         <div class="filtres">
             <div class="filtres__select">
                 <div class="filtres__select__selected">Coco<i class="far fa-times-circle"></i></div>
             </div>
-            <select class="filtres__ingredients">
-                <option value="">Ingredients</option>
-                <option value="Lait de coco">Lait de coco</option>
-                <option value="Jus de citron">Jus de citron</option>
-                <option value="Crème de coco">Crème de coco</option>
-                <option value="Sucre">Sucre</option>
-                <option value="Glaçons">Glaçons</option>
-            </select>
-            <select class="filtres__appareil">
-                <option value="">Appareil</option>
-                <option value="Blender">Blender</option>
-            </select>
-            <select class="filtres__ustensiles">
-                <option value="">Ustensiles</option>
-                <option value="cuillère à Soupe">Cuillère à Soupe</option>
-                <option value="verres">Verres</option>
-                <option value="presse citron">Presse citron</option>
-            </select>
         </div>
+
+        <div class="filtresContainer">
+            <div class="dropdown rechercheSecondaireContainer" id="rechercheIngredientsContainer">
+                <div class="input-group filtres--ingredients" id="searchIngredients">
+                    <input class="col inputFiltres inputIngredients" type="text" id="rechercheIngredients" name="ingredients" placeholder="Ingrédients">
+                    <button type="button" class="btn btnFiltres" id="detailRechercheIngredientsBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                </div>   
+                <div  class="dropdown--ingredients" id="dropdownIngredients">
+                    <ul id="detailRechercheIngredients" class="hide"></ul>
+                </div>
+            </div>
+
+            <div class="dropdown searchPrincipaleContainer" id="searchAppareilContainer">
+                <div class="input-group filtres--appareil" id="searchAppareil">
+                    <input class="col inputFiltres inputAppareil" type="text" id="rechercheAppareil" name="appareil" placeholder="Appareil">
+                    <button type="button" class="btn btnFiltres" id="detailRechercheAppareilBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div  class="dropdown--appareil" id="dropdownAppareil">
+                    <ul id="detailRechercheAppareil" class="hide"></ul>
+                </div>
+            </div>
+            <div class="dropdown searchPrincipaleContainer" id="searchUstensilesContainer">
+                <div class="input-group filtres--ustensiles" id="searchUstensiles">
+                    <input class="col inputFiltres inputUstensiles" type="text" id="rechercheUstensiles" name="ustensiles" placeholder="Ustensiles">
+                    <button type="button" class="btn btnFiltres" id="detailRechercheUstensilesBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div  class="dropdown--ustensiles" id="dropdownUstensiles">
+                    <ul id="detailRechercheUstensiles" class="hide"></ul>
+                </div>
+            </div>
+        </div>      
         <article id="recettes">
             <figure class="figure">
                 <div class="figure__img">
@@ -112,13 +130,6 @@
             </figure>
         </article>
     </main>
-    <!--Section Footer-->
-    <footer class="footer">
-        <img class="footer__logo" src="images/logo/logo.SVG" alt="logo">
-        <div class="footer__div"><a href="#proposez"><i class="fas fa-utensils"></i>Proposer un restaurant</a></div>
-        <div class="footer__div"><a href="#devenir"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></div>
-        <div class="footer__div"><a href="#mention">Mentions légals</a></div>
-        <div class="footer__div"><a href="mailto:contact@ohmyfood.com">Contact</a></div>
-    </footer>
+    <script type="module" src="./js/app.js"></script>
 </body>
 </html>

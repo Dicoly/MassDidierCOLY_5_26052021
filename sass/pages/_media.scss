@@ -1,5 +1,8 @@
 /*Media Queries mobile*/
 @media screen and (max-width: $breakpoint-mobile) {
+    .main {
+        margin: 0 1rem;
+    }
     .filtres {
         &__select {
             display: flex;
@@ -16,15 +19,6 @@
                 }
             }
         }
-        &__ingredients {
-            margin: 0.5rem 1rem 1rem 0;
-        }
-        &__appareil {
-            margin-bottom: 1rem;
-        }
-        &__ustensiles {
-            margin-bottom: 1rem;
-        }
     }
     #recettes {
         display: grid;
@@ -37,6 +31,9 @@
 
 /*Media Queries tablette*/
 @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablette) {
+    .main {
+        margin: 0 1rem;
+    }
     #recettes {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

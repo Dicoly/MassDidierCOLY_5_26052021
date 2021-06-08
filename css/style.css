@@ -1,4 +1,5 @@
-/* Responsive */
+@charset "UTF-8";
+/* Responsive*/
 body {
   margin: 0;
   padding: 0;
@@ -19,49 +20,30 @@ body {
   height: 95px;
 }
 
-/*Section Footer*/
-.footer {
-  background-color: #383737;
-  color: #ffffff;
-  padding: 1.5rem 1rem 1.5rem 3rem;
-  font-size: 1rem;
-  margin-top: 3rem;
-}
-.footer__logo {
-  padding-bottom: 0.8rem;
-  width: 10rem;
-}
-.footer__div {
-  padding-bottom: 0.6rem;
-}
-.footer__div a {
-  color: #ffffff;
-}
-.footer i.fas.fa-hands-helping {
-  font-size: 0.6rem;
-  padding-right: 0.8rem;
-}
-.footer i.fas.fa-utensils {
-  font-size: 0.8rem;
-  padding-right: 1rem;
+.main {
+  margin: 0 4rem;
 }
 
-.main {
-  margin: 0 5rem;
+input {
+  font-family: "Lato", sans-serif;
 }
 
 .mb-3 {
-  margin-top: 20px;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .form-control--modif {
-  margin-right: -41px;
+  margin-right: -1px;
   background-color: #e7e7e7;
   padding: 15px;
+  height: 4rem;
+  border: none;
 }
 
 .btn-outline-secondary {
   border: none;
+  background-color: #e7e7e7;
 }
 .btn-outline-secondary .fa-search {
   color: black;
@@ -71,6 +53,7 @@ body {
   border-radius: 0.25rem;
 }
 
+/* Tags selectionnés*/
 .filtres {
   text-decoration: none;
   color: black;
@@ -97,44 +80,127 @@ body {
   padding: 5px;
   margin-left: 10px;
 }
-.filtres__ingredients {
+
+.filtresContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*Listes des tags*/
+.dropdown {
+  display: block;
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+.dropdown--ingredients {
+  background-color: #3282F7;
+  border-radius: 0 5px 5px 5px;
+}
+.dropdown--appareil {
+  background-color: #68D9A4;
+  border-radius: 0 5px 5px 5px;
+}
+.dropdown--ustensiles {
+  background-color: #ED6454;
+  border-radius: 0 5px 5px 5px;
+}
+.dropdown .fa-chevron-down {
+  color: white;
+}
+.dropdown .input-group {
+  width: auto;
+}
+.dropdown .input-group .fa-chevron-down {
+  animation-name: btnFilt;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+}
+.dropdown .show .fa-chevron-down {
+  animation-name: btnFiltres;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 45vw;
+  padding: 1rem;
+  margin-top: -5px;
+}
+ul li {
+  list-style-type: none;
+  width: 33%;
+}
+ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+}
+ul li a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+ul li:hover {
+  background-color: #e7e7e7;
+}
+
+.hide {
+  display: none;
+}
+
+.inputFiltres {
+  height: 4rem;
+  padding: 0px 15px;
+  border: none;
+  font-size: 18px;
+  color: #ffffff;
+  flex-grow: 1;
+  width: 8.2rem;
+}
+.inputFiltres::placeholder {
+  color: #ffffff;
+  font-size: 18px;
+}
+.inputFiltres:focus-visible {
+  outline: 0;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+/* filtres Ingredients*/
+.filtres--ingredients {
   background-color: #3282f7;
-  width: 170px;
-  height: 70px;
-  padding: 10px;
-  border: none;
   border-radius: 5px;
-  font-size: 18px;
-  margin-right: 1rem;
-  font-family: "Lato", sans-serif;
-  font-weight: bold;
-  color: #ffffff;
+  border: none;
 }
-.filtres__appareil {
-  background-color: #68d9a4;
-  width: 170px;
-  height: 70px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  margin-right: 1rem;
-  font-family: "Lato", sans-serif;
-  font-weight: bold;
-  color: #ffffff;
+.filtres--ingredients .inputIngredients {
+  background-color: #3282f7;
 }
-.filtres__ustensiles {
-  background-color: #ed6454;
-  width: 170px;
-  height: 70px;
-  padding: 10px;
-  border: none;
+
+/* filtres Appareil*/
+.filtres--appareil {
+  background-color: #68D9A4;
   border-radius: 5px;
-  font-size: 18px;
-  margin-right: 1rem;
-  font-family: "Lato", sans-serif;
-  font-weight: bold;
-  color: #ffffff;
+  border: none;
+}
+.filtres--appareil .inputAppareil {
+  background-color: #68D9A4;
+}
+
+/* filtres Ustensiles*/
+.filtres--ustensiles {
+  background-color: #ED6454;
+  border-radius: 5px;
+  border: none;
+}
+.filtres--ustensiles .inputUstensiles {
+  background-color: #ED6454;
 }
 
 #recettes {
@@ -199,8 +265,24 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+@keyframes btnFilt {
+  0% {
+    transform: rotate(0deg);
+    transition: 0.5s;
+  }
+}
+@keyframes btnFiltres {
+  100% {
+    transform: rotate(180deg);
+    transition: 1s;
+  }
+}
 /*Media Queries mobile*/
 @media screen and (max-width: 768px) {
+  .main {
+    margin: 0 1rem;
+  }
+
   .filtres__select {
     display: flex;
     flex-direction: row;
@@ -216,15 +298,6 @@ body {
   .filtres__select__selected .fa-times-circle {
     padding: 5px;
   }
-  .filtres__ingredients {
-    margin: 0.5rem 1rem 1rem 0;
-  }
-  .filtres__appareil {
-    margin-bottom: 1rem;
-  }
-  .filtres__ustensiles {
-    margin-bottom: 1rem;
-  }
 
   #recettes {
     display: grid;
@@ -236,6 +309,10 @@ body {
 }
 /*Media Queries tablette*/
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main {
+    margin: 0 1rem;
+  }
+
   #recettes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

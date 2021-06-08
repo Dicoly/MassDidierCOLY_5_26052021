@@ -1,19 +1,15 @@
 {
-  "name": "projetlespetitsplats",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Dicoly/MassDidierCOLY_5_26052021.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Dicoly/MassDidierCOLY_5_26052021/issues"
-  },
-  "homepage": "https://github.com/Dicoly/MassDidierCOLY_5_26052021#readme"
+    "name": "Demo",
+    "version": "1.0.0",
+    "description": "demo project.",
+    "scripts": {
+        "sass": "sass --watch ./sass/main.scss:./css/style.css",
+        "lite": "lite-server --port 10001",
+        "start": "npm run lite"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "lite-server": "^1.3.1"
+    }
 }
