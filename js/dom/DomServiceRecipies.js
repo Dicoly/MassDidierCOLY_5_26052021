@@ -18,7 +18,7 @@ class DomServiceRecipies {
 
             htmlContent += `<div class="recettesContainer">
                                 <figure class="figure">
-                                    <div class="figure__img"><img src="" alt="" title=""></div>
+                                <div ><img class="figure__img" src="images/cebon.jpg" alt="" title=""></div>
                                     <figcaption class="figcaption">
                                         <h3 class="figcaption__titre">${recette.name}</h3>
                                         <p class="figcaption__temps"><i class="far fa-clock"></i><strong> ${recette.time} min </strong></p>

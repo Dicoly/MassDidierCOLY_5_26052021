@@ -1,4 +1,4 @@
-const ResultDeLaRecherche = {
+const ResultatDeLaRecherche = {
     "recettesFiltrees": [{
         "id": 1,
         "name": "Limonade de Coco",
@@ -97,9 +97,9 @@ const ResultDeLaRecherche = {
         "appliance": "Saladier",
         "ustensils":["fouet", "verres", "cuillère en bois"]
     }],
-    "ustensils": ["cuillère à Soupe", "verres", "presse citron"],
-    "ingredients": ["Lait de coco", "Jus de citron", "Crème de coco"],
-    "appareils": []
+    "ustensils": ["cuillère à Soupe", "verres", "presse citron","rouleau à patisserie","fouet", "cuillère en bois"],
+    "ingredients": ["Lait de coco", "Jus de citron", "Crème de coco","Pâte feuilletée","Oeuf","Poudre d'amendes", "Beurre", "Sucre glace", "Sucre", "Mascarpone", "Crème Fraîche",],
+    "appliance": ["Blender", "Four", "Saladier"]
 }
 
-export default ResultDeLaRecherche;
+export default ResultatDeLaRecherche;

@@ -31,6 +31,24 @@ input {
     border-radius: 0.25rem;
 }
 /* Tags selectionnés*/
+
+.tags__Selected {
+    margin: 0.5rem 0 1rem 0;
+    //padding: 6px 8px;
+    border-radius: 5px;
+    color: $color-white;
+    width: 107px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    .fa-times-circle {
+        padding: 5px;
+        margin-left: 5px; 
+    }
+}
+/*
 .filtres {
     text-decoration: none;
     color: $color-black;
@@ -57,7 +75,7 @@ input {
         }
     }
 }
-
+*/
 .filtresContainer {
     display: flex;
     flex-wrap: wrap;
@@ -198,11 +216,12 @@ input {
     margin-top: 2.5rem;
     border-radius: 5px;
     &__img {
-        height: 10rem;
+        height: 11rem;
         width: 100%;
         background-color: $color-inactive;
         border-radius: 5px 5px 0px 0px;
         padding: 1px;
+        object-fit: cover;
     }
     .figcaption {
         background-color: $color-shadow;

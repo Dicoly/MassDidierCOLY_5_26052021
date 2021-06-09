@@ -8,14 +8,20 @@ import DomServiceRecipies from './dom/DomServiceRecipies.js';
 
 let listIngredients = new DomRechercheSecondaireIngredients();
 listIngredients.remplirListeDeroulante(ResultatDeLaRecherche.ingredients);
+
+// au click d'un tag sa l'ajoute a la liste des tags selectionnés ou le retire
+listIngredients.selectedTags();
+
 let listAppareils = new DomRechercheSecondaireAppareils();
-listAppareils.remplirListeDeroulante(ResultatDeLaRecherche.appareils);
+listAppareils.remplirListeDeroulante(ResultatDeLaRecherche.appliance);
 let listUstensils = new DomRechercheSecondaireUstensils();
 listUstensils.remplirListeDeroulante(ResultatDeLaRecherche.ustensils);
 
 const listRecipiesContainer = document.getElementById('listRecipiesContainer');
 
+//Affiche les recettes
 let domRecipiesService = new DomServiceRecipies(listRecipiesContainer);
-domRecipiesService.afficherLesRecettes(ResultatDeLaRecherche.recettesFiltrees)
+domRecipiesService.afficherLesRecettes(ResultatDeLaRecherche.recettesFiltrees);
 
 console.log(ResultatDeLaRecherche);
+

@@ -54,20 +54,9 @@ input {
 }
 
 /* Tags selectionnés*/
-.filtres {
-  text-decoration: none;
-  color: black;
-}
-.filtres__select {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.filtres__select__selected {
+.tags__Selected {
   margin: 0.5rem 0 1rem 0;
-  padding: 6px 8px;
   border-radius: 5px;
-  background-color: #3282f7;
   color: #ffffff;
   width: 107px;
   display: flex;
@@ -76,11 +65,39 @@ input {
   font-size: 14px;
   font-weight: bold;
 }
-.filtres__select__selected .fa-times-circle {
+.tags__Selected .fa-times-circle {
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
+/*
+.filtres {
+    text-decoration: none;
+    color: $color-black;
+    &__select {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &__selected {
+            margin: 0.5rem 0 1rem 0;
+            padding: 6px 8px;
+            border-radius: 5px;
+            background-color: $color-ingredients;
+            color: $color-white;
+            width: 107px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            .fa-times-circle {
+                padding: 5px;
+                margin-left: 10px; 
+            }
+        }
+    }
+}
+*/
 .filtresContainer {
   display: flex;
   flex-wrap: wrap;
@@ -219,11 +236,12 @@ input {
   border-radius: 5px;
 }
 .figure__img {
-  height: 10rem;
+  height: 11rem;
   width: 100%;
   background-color: #c7bebe;
   border-radius: 5px 5px 0px 0px;
   padding: 1px;
+  object-fit: cover;
 }
 .figure .figcaption {
   background-color: #e7e7e7;
