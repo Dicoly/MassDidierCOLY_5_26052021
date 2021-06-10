@@ -21,7 +21,7 @@ body {
 }
 
 .main {
-  margin: 0 4rem;
+  margin: 0 5rem;
 }
 
 input {
@@ -55,19 +55,36 @@ input {
 
 /* Tags selectionnés*/
 .tags__Selected {
-  margin: 0.5rem 0 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.tags__Selected div {
+  margin: 0.5rem 1rem 1rem 0;
+  padding: 6px 8px;
   border-radius: 5px;
   color: #ffffff;
   width: 107px;
+  height: 37px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
   font-weight: bold;
 }
-.tags__Selected .fa-times-circle {
-  padding: 5px;
-  margin-left: 5px;
+.tags__Selected div .fa-times-circle {
+  margin-left: 10px;
+}
+.tags__Selected .tagsIgredients {
+  background-color: #3282f7;
+}
+.tags__Selected .tagsAppareils {
+  background-color: #68d9a4;
+}
+.tags__Selected .tagsUstensiles {
+  background-color: #ed6454;
 }
 
 /*
@@ -222,21 +239,17 @@ input {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
-}
-
-.recettesContainer {
-  margin-right: 2.5rem;
+  justify-content: space-between;
 }
 
 .figure {
-  height: 23rem;
-  width: 25rem;
+  height: 364px;
+  width: 380px;
   margin-top: 2.5rem;
   border-radius: 5px;
 }
 .figure__img {
-  height: 11rem;
+  height: 178px;
   width: 100%;
   background-color: #c7bebe;
   border-radius: 5px 5px 0px 0px;
@@ -245,7 +258,7 @@ input {
 }
 .figure .figcaption {
   background-color: #e7e7e7;
-  height: 12rem;
+  height: 186px;
   width: 100%;
   border-radius: 0px 0px 5px 5px;
   padding: 15px;
@@ -270,6 +283,7 @@ input {
   height: 7rem;
   font-size: 12px;
   padding-left: 0rem;
+  width: 50%;
 }
 .figure .figcaption__ingredients ul {
   margin-bottom: 0rem;
@@ -278,7 +292,7 @@ input {
   list-style-type: none;
 }
 .figure .figcaption__description {
-  width: 10rem;
+  width: 171px;
   font-size: 0.9rem;
   line-height: 12px;
   height: 7rem;

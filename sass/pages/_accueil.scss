@@ -1,5 +1,5 @@
 .main {
-    margin: 0 4rem;
+    margin: 0 5rem;
 }
 
 input {
@@ -33,19 +33,35 @@ input {
 /* Tags selectionnés*/
 
 .tags__Selected {
-    margin: 0.5rem 0 1rem 0;
-    //padding: 6px 8px;
-    border-radius: 5px;
-    color: $color-white;
-    width: 107px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    .fa-times-circle {
-        padding: 5px;
-        margin-left: 5px; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    div {
+        margin: 0.5rem 1rem 1rem 0;
+        padding: 6px 8px;
+        border-radius: 5px;
+        color: $color-white;
+        width: 107px;
+        height: 37px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: bold;
+        .fa-times-circle {
+            margin-left: 10px; 
+        }
+    }
+    .tagsIgredients {
+        background-color: $color-ingredients;   
+    }
+    .tagsAppareils {
+        background-color: $color-appareil;   
+    }
+    .tagsUstensiles {
+        background-color: $color-ustensiles;   
     }
 }
 /*
@@ -203,20 +219,16 @@ input {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-}
-
-.recettesContainer {
-    margin-right: 2.5rem;
+    justify-content: space-between;
 }
 
 .figure {
-    height: 23rem;
-    width: 25rem;
+    height: 364px;
+    width: 380px;
     margin-top: 2.5rem;
     border-radius: 5px;
     &__img {
-        height: 11rem;
+        height: 178px;
         width: 100%;
         background-color: $color-inactive;
         border-radius: 5px 5px 0px 0px;
@@ -225,7 +237,7 @@ input {
     }
     .figcaption {
         background-color: $color-shadow;
-        height: 12rem;
+        height: 186px;
         width: 100%;
         border-radius: 0px 0px 5px 5px;
         padding: 15px;
@@ -249,6 +261,7 @@ input {
             height: 7rem;
             font-size: 12px;
             padding-left: 0rem;
+            width: 50%;
             ul {
                 margin-bottom: 0rem;
             }
@@ -257,7 +270,7 @@ input {
             }
         }
         &__description {
-            width: 10rem;
+            width: 171px;
             font-size: 0.9rem;
             line-height: 12px;
             height: 7rem;
