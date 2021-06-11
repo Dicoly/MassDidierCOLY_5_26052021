@@ -17,7 +17,7 @@ class DomRechercheSecondaireIngredients {
         let listSelect = document.getElementById('detailRechercheIngredients');
         listSelect.insertAdjacentHTML('beforeend', htmlContent);
     };
-    
+    //Affichage de la classe Hide contenant la liste des Ingredients
     afficherOuMasquerListe() {
         document.getElementById('detailRechercheIngredientsBtn').addEventListener('click', function () {
             let estAfficher = document.getElementById('detailRechercheIngredients').classList.contains('hide');
@@ -26,7 +26,14 @@ class DomRechercheSecondaireIngredients {
             } else {
                 document.getElementById('detailRechercheIngredients').classList.add('hide');
             }
-        })
+        });
+        //ratation icon bouton dropdown
+        const btnicon = document.getElementById('detailRechercheIngredientsBtn');
+        btnicon.addEventListener('click', rotateIcon);
+
+        function rotateIcon() {
+            btnicon.classList.toggle('show');
+        }
     };
 }
 

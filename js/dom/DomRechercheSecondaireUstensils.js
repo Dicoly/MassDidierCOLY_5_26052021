@@ -15,7 +15,7 @@ class DomRechercheSecondaireUstensils {
         let listSelect = document.getElementById('detailRechercheUstensiles');
         listSelect.insertAdjacentHTML('beforeend', htmlContent);
     };
-    
+    //Affichage de la classe Hide contenant la liste des ustensils
     afficherOuMasquerListe() {
         document.getElementById('detailRechercheUstensilesBtn').addEventListener('click', function () {
             let estAfficher = document.getElementById('detailRechercheUstensiles').classList.contains('hide');
@@ -24,7 +24,14 @@ class DomRechercheSecondaireUstensils {
             } else {
                 document.getElementById('detailRechercheUstensiles').classList.add('hide');
             }
-        })
+        });
+        //ratation icon bouton dropdown
+        const btnicon = document.getElementById('detailRechercheUstensilesBtn');
+        btnicon.addEventListener('click', rotateIcon);
+
+        function rotateIcon() {
+            btnicon.classList.toggle('show');
+        }
     }
 }
 

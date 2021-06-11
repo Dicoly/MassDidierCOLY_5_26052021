@@ -118,18 +118,10 @@ input {
 .dropdown .fa-chevron-down {
   color: white;
 }
-.dropdown .input-group {
-  width: auto;
-}
-.dropdown .input-group fa-chevron-down {
-  animation-name: btnFilt;
-  animation-duration: 0.5s;
-  animation-fill-mode: backwards;
-}
 .dropdown .show .fa-chevron-down {
   animation-name: btnFiltres;
   animation-duration: 1s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both;
 }
 .dropdown ul {
   display: flex;
@@ -281,13 +273,11 @@ input {
   font-family: "Roboto", sans-serif;
 }
 
-@keyframes btnFilt {
+@keyframes btnFiltres {
   0% {
     transform: rotate(0deg);
     transition: 0.5s;
   }
-}
-@keyframes btnFiltres {
   100% {
     transform: rotate(180deg);
     transition: 1s;

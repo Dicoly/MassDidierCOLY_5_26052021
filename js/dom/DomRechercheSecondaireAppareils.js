@@ -16,7 +16,7 @@ class DomRechercheSecondaireAppareils {
         let listSelect = document.getElementById('detailRechercheAppareil');
         listSelect.insertAdjacentHTML('beforeend', htmlContent);
     };
-    
+    //Affichage de la classe Hide contenant la liste des appareils
     afficherOuMasquerListe() {
         document.getElementById('detailRechercheAppareilBtn').addEventListener('click', function () {
             let estAfficher = document.getElementById('detailRechercheAppareil').classList.contains('hide');
@@ -26,7 +26,15 @@ class DomRechercheSecondaireAppareils {
                 document.getElementById('detailRechercheAppareil').classList.add('hide');
             }
         })
-    }
+        //ratation icon bouton dropdown
+        const btnicon = document.getElementById('detailRechercheAppareilBtn');
+        btnicon.addEventListener('click', rotateIcon);
+
+        function rotateIcon() {
+            btnicon.classList.toggle('show');
+        }
+    };
+        
 }
 
 export  default DomRechercheSecondaireAppareils;

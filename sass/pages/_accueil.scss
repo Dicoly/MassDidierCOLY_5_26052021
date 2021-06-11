@@ -97,18 +97,11 @@ input {
     .fa-chevron-down {
         color: white;
     }
-    .input-group {
-        width: auto;
-        fa-chevron-down {
-            animation-name: btnFilt;
-            animation-duration: 0.5s;
-            animation-fill-mode: backwards;
-        }
-    }
-    .show .fa-chevron-down{
+   
+    .show .fa-chevron-down {
         animation-name: btnFiltres;
         animation-duration: 1s;
-        animation-fill-mode: forwards;
+        animation-fill-mode: both;
     }
     ul {
         display: flex;
@@ -262,13 +255,11 @@ input {
     }
 }
 
-@keyframes btnFilt {
+@keyframes btnFiltres{
     0% {
         transform: rotate(0deg);
         transition: 0.5s;
     }
-}
-@keyframes btnFiltres{
     100% {
         transform: rotate(180deg);
         transition: 1s;

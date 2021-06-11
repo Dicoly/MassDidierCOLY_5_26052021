@@ -21,8 +21,6 @@ let domTagsSelect = new DomTagsselected(tagsSelected);
 domTagsSelect.selectedTags(ResultatDeLaRecherche);
 
 
-
-
 //Pour l'article contenuant les recettes
 const listRecipiesContainer = document.getElementById('listRecipiesContainer');
 
@@ -31,4 +29,3 @@ let domRecipiesService = new DomServiceRecipies(listRecipiesContainer);
 domRecipiesService.afficherLesRecettes(ResultatDeLaRecherche.recettesFiltrees);
 
 console.log(ResultatDeLaRecherche);
-
