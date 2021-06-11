@@ -87,7 +87,7 @@ input {
   background-color: #ed6454;
 }
 
-#monIconCircle {
+.monIconCircle {
   padding: 6px 5px 6px 0;
   margin-right: -5px;
 }
@@ -137,18 +137,17 @@ input {
   width: 33%;
   margin-bottom: 0.5rem;
 }
-.dropdown ul li a {
+.dropdown ul li a.tagSelected {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
   font-size: 18px;
   font-family: "Lato", sans-serif;
+  background-color: #ffffff;
+  border-radius: 20px;
 }
-.dropdown ul li a:hover {
-  color: #000000;
+.dropdown ul li a {
+  color: #ffffff;
   text-decoration: none;
-}
-.dropdown ul li:hover {
-  background-color: #e7e7e7;
 }
 .dropdown .hide {
   display: none;
