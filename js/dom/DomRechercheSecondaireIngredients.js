@@ -9,13 +9,11 @@ class DomRechercheSecondaireIngredients {
 
         //Ajout des LI dans la liste deroulante
         listDesIngredients.forEach(function (item) {
-            
             htmlContent += `<li class="tags__item"><a href="#">${item}</a></li>`;
 
         });
 
         // Ajouter des ingredients
-        var node = document.createElement("LI");
         let listSelect = document.getElementById('detailRechercheIngredients');
         listSelect.insertAdjacentHTML('beforeend', htmlContent);
     };

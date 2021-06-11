@@ -12,7 +12,6 @@ class DomRechercheSecondaireUstensils {
         });
         
         // Ajouter des ustensils
-        var node = document.createElement("LI");
         let listSelect = document.getElementById('detailRechercheUstensiles');
         listSelect.insertAdjacentHTML('beforeend', htmlContent);
     };

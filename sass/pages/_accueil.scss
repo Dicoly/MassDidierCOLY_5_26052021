@@ -55,7 +55,7 @@ input {
         }
     }
     .tagsIgredients {
-        background-color: $color-ingredients;   
+        background-color: $color-ingredients;
     }
     .tagsAppareils {
         background-color: $color-appareil;   
@@ -64,34 +64,12 @@ input {
         background-color: $color-ustensiles;   
     }
 }
-/*
-.filtres {
-    text-decoration: none;
-    color: $color-black;
-    &__select {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        &__selected {
-            margin: 0.5rem 0 1rem 0;
-            padding: 6px 8px;
-            border-radius: 5px;
-            background-color: $color-ingredients;
-            color: $color-white;
-            width: 107px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            font-weight: bold;
-            .fa-times-circle {
-                padding: 5px;
-                margin-left: 10px; 
-            }
-        }
-    }
+
+#monIconCircle {
+    padding: 6px 5px 6px 0;
+    margin-right: -5px;
 }
-*/
+
 .filtresContainer {
     display: flex;
     flex-wrap: wrap;
@@ -121,11 +99,11 @@ input {
     }
     .input-group {
         width: auto;
-        .fa-chevron-down {
+        fa-chevron-down {
             animation-name: btnFilt;
             animation-duration: 0.5s;
             animation-fill-mode: backwards;
-        } 
+        }
     }
     .show .fa-chevron-down{
         animation-name: btnFiltres;
@@ -143,6 +121,7 @@ input {
         li {
             list-style-type: none;
             width: 33%;
+            margin-bottom: 0.5rem;
             a {
                 text-decoration: none;
                 color: #ffffff;
@@ -258,10 +237,10 @@ input {
             position: absolute;
             overflow: hidden;
             text-overflow: ellipsis;
-            height: 7rem;
+            height: 105px;
             font-size: 12px;
             padding-left: 0rem;
-            width: 50%;
+            width: 171px;
             ul {
                 margin-bottom: 0rem;
             }
@@ -273,7 +252,7 @@ input {
             width: 171px;
             font-size: 0.9rem;
             line-height: 12px;
-            height: 7rem;
+            height: 110px;
             overflow: hidden;
             text-overflow: ellipsis;
             float: right;
