@@ -8,25 +8,26 @@ class DomRechercheSecondaireUstensils {
         let htmlContent = '';
         //Ajout des LI dans la liste deroulante
         listDesUstensils.forEach(function (item) {
-            htmlContent += `<li class="tagUstensils"><a href="#">${item}</a></li>`;
+            htmlContent += `<li class="tags__item" data-id-filter="${item}"><a href="#">${item}</a></li>`;
         });
-        
         // Ajouter des ustensils
-        let listSelect = document.getElementById('detailRechercheUstensiles');
+        let listSelect = document.getElementById('detailListUstensiles');
         listSelect.insertAdjacentHTML('beforeend', htmlContent);
     };
     //Affichage de la classe Hide contenant la liste des ustensils
     afficherOuMasquerListe() {
-        document.getElementById('detailRechercheUstensilesBtn').addEventListener('click', function () {
-            let estAfficher = document.getElementById('detailRechercheUstensiles').classList.contains('hide');
+        document.getElementById('btnUstensiles').addEventListener('click', function () {
+            let estAfficher = document.getElementById('detailListUstensiles').classList.contains('hide');
             if (estAfficher) {
-                document.getElementById('detailRechercheUstensiles').classList.remove('hide');
+                document.getElementById('detailListUstensiles').classList.remove('hide');
+                document.getElementById('inputUstensiles').classList.add('show');//changement de placeholder   
             } else {
-                document.getElementById('detailRechercheUstensiles').classList.add('hide');
+                document.getElementById('detailListUstensiles').classList.add('hide');
+                document.getElementById('inputUstensiles').classList.remove('show');
             }
         });
         //ratation icon bouton dropdown
-        const btnicon = document.getElementById('detailRechercheUstensilesBtn');
+        const btnicon = document.getElementById('btnUstensiles');
         btnicon.addEventListener('click', rotateIcon);
 
         function rotateIcon() {

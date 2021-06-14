@@ -16,12 +16,12 @@ listUstensils.remplirListeDeroulante(ResultatDeLaRecherche.ustensils);
 
 // au click d'un tag sa l'ajoute a la liste des tags selectionnés ou le retire
 const tagsSelected = document.getElementById('tagsSelected');
-//tagsSelected.selectedTags();
+
 let domTagsSelect = new DomTagsSelected(tagsSelected);
 domTagsSelect.selectedTags(ResultatDeLaRecherche);
 
 
-//Pour l'article contenuant les recettes
+//Pour l'article contenant des recettes
 const listRecipiesContainer = document.getElementById('listRecipiesContainer');
 
 //Affiche les recettes

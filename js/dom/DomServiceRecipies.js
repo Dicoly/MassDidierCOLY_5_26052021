@@ -9,14 +9,24 @@ class DomServiceRecipies {
         let htmlContent = '';
 
         recettes.forEach(recette => {
-
             //Recuperation des ingredients de la recettes
             let listIngredientsHtml = '';
             recette.ingredients.forEach(ingredient => {
-
-                listIngredientsHtml += `<li><strong>${ingredient.ingredient}</strong> : ${ingredient.quantity} ${ingredient.unit}</li>`;
+                let unit = '';
+                let quantity = '';
+                //permet d'affiche l'unité s'il en existe
+                if (ingredient.unit !== undefined) {
+                    unit = ingredient.unit; 
+                };
+                //permet d'affiche la quantité s'il en existe
+                if (ingredient.quantity !== undefined) {
+                    quantity = ingredient.quantity;
+                };
+                listIngredientsHtml += `<li>
+                                            <strong>${ingredient.ingredient}
+                                            </strong> : ${quantity} ${unit}
+                                        </li>`;
             })
-            
             //Contenu d'une recette
             htmlContent += `<div class="recettesContainer">
                                 <figure class="figure">
@@ -30,10 +40,9 @@ class DomServiceRecipies {
                                 <figure>
                             </div>`;
         });
-        //Affiche le setion  des recettes
+        //Affiche la section  des recettes
         this.container.insertAdjacentHTML('beforeend', htmlContent);
     }
 }
-
 
 export default DomServiceRecipies;

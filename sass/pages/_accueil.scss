@@ -13,7 +13,7 @@ input {
 
 .form-control--modif {
     margin-right: -1px;
-    background-color: #e7e7e7;
+    background-color: $color-shadow;
     padding: 15px;
     height: 4rem;
     border: none;
@@ -21,7 +21,7 @@ input {
 
 .btn-outline-secondary {
     border: none;
-    background-color: #e7e7e7;
+    background-color: $color-shadow;
     .fa-search {
         color: $color-black;
     }
@@ -76,26 +76,26 @@ input {
 }
 
 /*Listes des tags*/
-.dropdown {
+.selectList {
     display: block;
     margin-right: 2rem;
     margin-top: 1rem;
-    &--ingredients{
-        background-color: #3282F7;
+    .tagsIngredients{
+        background-color: $color-ingredients;
         border-radius: 0 5px 5px 5px;
     }
     
-    &--appareil{
-        background-color: #68D9A4;
+    .tagsAppareil{
+        background-color: $color-appareil;
         border-radius: 0 5px 5px 5px;
     }
     
-    &--ustensiles{
-        background-color: #ED6454;
+    .tagsUstensiles{
+        background-color: $color-ustensiles;
         border-radius: 0 5px 5px 5px;
     }
     .fa-chevron-down {
-        color: white;
+        color: $color-white;
     }
    
     .show .fa-chevron-down {
@@ -117,14 +117,15 @@ input {
             margin-bottom: 0.5rem;
             a.tagSelected {
                 text-decoration: none;
-                color: #000000;
+                color: $color-black;
                 font-size: 18px;
                 font-family: "Lato", sans-serif;
-                background-color: #ffffff;
-                border-radius: 20px;
+                background-color: $color-white;
+                border-radius: 5px;
+                padding: 5px;
             }
             a {
-                color: #ffffff;
+                color: $color-white;
                 text-decoration: none;
             }
         }
@@ -139,16 +140,21 @@ input {
     padding: 0px 15px;
     border: none;
     font-size: 18px;
-    color: #ffffff;
+    color: $color-white;
     flex-grow: 1;
     width: 8.2rem;
     &::placeholder {
-        color: #ffffff;
+        color: $color-white;
         font-size: 18px;
     }
     &:focus-visible {
         outline: 0;
     }
+}
+
+.show::placeholder {
+    color: $color-inactive;
+    font-size: 18px;
 }
 
 .btn:focus {
@@ -157,31 +163,31 @@ input {
 
 /* filtres Ingredients*/
 .filtres--ingredients {
-    background-color: #3282f7;
+    background-color: $color-ingredients;
     border-radius: 5px;
     border: none;
     .inputIngredients {
-        background-color: #3282f7;
+        background-color: $color-ingredients;
     }
 }
 
 /* filtres Appareil*/
 .filtres--appareil {
-    background-color: #68D9A4;
+    background-color: $color-appareil;
     border-radius: 5px;
     border: none;
     .inputAppareil {
-        background-color: #68D9A4;
+        background-color: $color-appareil;
     }
 }
 
 /* filtres Ustensiles*/
 .filtres--ustensiles {
-    background-color: #ED6454;
+    background-color: $color-ustensiles;
     border-radius: 5px;
     border: none;
     .inputUstensiles {
-        background-color: #ED6454;
+        background-color: $color-ustensiles;
     }
 }
 

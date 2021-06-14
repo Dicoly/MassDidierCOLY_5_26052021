@@ -98,32 +98,32 @@ input {
 }
 
 /*Listes des tags*/
-.dropdown {
+.selectList {
   display: block;
   margin-right: 2rem;
   margin-top: 1rem;
 }
-.dropdown--ingredients {
-  background-color: #3282F7;
+.selectList .tagsIngredients {
+  background-color: #3282f7;
   border-radius: 0 5px 5px 5px;
 }
-.dropdown--appareil {
-  background-color: #68D9A4;
+.selectList .tagsAppareil {
+  background-color: #68d9a4;
   border-radius: 0 5px 5px 5px;
 }
-.dropdown--ustensiles {
-  background-color: #ED6454;
+.selectList .tagsUstensiles {
+  background-color: #ed6454;
   border-radius: 0 5px 5px 5px;
 }
-.dropdown .fa-chevron-down {
-  color: white;
+.selectList .fa-chevron-down {
+  color: #ffffff;
 }
-.dropdown .show .fa-chevron-down {
+.selectList .show .fa-chevron-down {
   animation-name: btnFiltres;
   animation-duration: 1s;
   animation-fill-mode: both;
 }
-.dropdown ul {
+.selectList ul {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -132,24 +132,25 @@ input {
   padding: 1rem;
   margin-top: -5px;
 }
-.dropdown ul li {
+.selectList ul li {
   list-style-type: none;
   width: 33%;
   margin-bottom: 0.5rem;
 }
-.dropdown ul li a.tagSelected {
+.selectList ul li a.tagSelected {
   text-decoration: none;
-  color: #000000;
+  color: black;
   font-size: 18px;
   font-family: "Lato", sans-serif;
   background-color: #ffffff;
-  border-radius: 20px;
+  border-radius: 5px;
+  padding: 5px;
 }
-.dropdown ul li a {
+.selectList ul li a {
   color: #ffffff;
   text-decoration: none;
 }
-.dropdown .hide {
+.selectList .hide {
   display: none;
 }
 
@@ -170,6 +171,11 @@ input {
   outline: 0;
 }
 
+.show::placeholder {
+  color: #c7bebe;
+  font-size: 18px;
+}
+
 .btn:focus {
   box-shadow: none;
 }
@@ -186,22 +192,22 @@ input {
 
 /* filtres Appareil*/
 .filtres--appareil {
-  background-color: #68D9A4;
+  background-color: #68d9a4;
   border-radius: 5px;
   border: none;
 }
 .filtres--appareil .inputAppareil {
-  background-color: #68D9A4;
+  background-color: #68d9a4;
 }
 
 /* filtres Ustensiles*/
 .filtres--ustensiles {
-  background-color: #ED6454;
+  background-color: #ed6454;
   border-radius: 5px;
   border: none;
 }
 .filtres--ustensiles .inputUstensiles {
-  background-color: #ED6454;
+  background-color: #ed6454;
 }
 
 #listRecipiesContainer {
