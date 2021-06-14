@@ -18,7 +18,8 @@ listUstensils.remplirListeDeroulante(ResultatDeLaRecherche.ustensils);
 const tagsSelected = document.getElementById('tagsSelected');
 
 let domTagsSelect = new DomTagsSelected(tagsSelected);
-domTagsSelect.selectedTags(ResultatDeLaRecherche);
+domTagsSelect.selectListEvent();
+domTagsSelect.tagSelectedEvent();
 
 
 //Pour l'article contenant des recettes

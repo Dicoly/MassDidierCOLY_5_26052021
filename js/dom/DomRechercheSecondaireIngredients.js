@@ -8,7 +8,7 @@ class DomRechercheSecondaireIngredients {
         let htmlContent = '';
         //Ajout des LI dans la liste deroulante
         listDesIngredients.forEach(function (item) {
-            htmlContent += `<li ><a class="tags__item" data-id-filter="${item}" href="#">${item}</a></li>`;
+            htmlContent += `<li ><a class="selectListItem" data-tag-value="${item}" href="#">${item}</a></li>`;
         });
         // Ajouter des ingredients
         let listSelect = document.getElementById('detailListIngredients');

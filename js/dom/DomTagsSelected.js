@@ -1,112 +1,64 @@
+/**
+ * permet de gerer les evenements sur les listes deroulantes
+ * 
+ * .selectList : classe deposé sur les trois listes 
+ *          Ex: ingredient, appareil et ustensile
+ * .selectListItem : element contenu dans une selectList
+ *          Ex: lait de coco, four et verre
+ * .selectListItemSelected : permet d'identifier si l'element
+ *          est deja selectionné (filtre actif)
+ * 
+ * #tagsSelected : contient les elements de recherche par tag selectionné
+ *          Ex: lait de coco, four et verre
+ * .removeTagSelected : permet de retirer un tag selectionné
+ */
 class DomTagsSelected {
     //Création tags selectionnés
-    selectedTags() {
-        let tagsIgredients = document.getElementById('detailListIngredients');
-        let tagsAppareil = document.getElementById('detailListAppareil')
-        let tagsUstensiles = document.getElementById('detailListUstensiles')
-        
+    selectListEvent() {
+       let selectLists = document.getElementsByClassName('selectList');
+
+       for (let item of selectLists) {
+            item.addEventListener('click', function (event) {
+                const element = event.target;
+                const type = item.dataset.type;
+                event.preventDefault();
+
+                if (element.classList.contains('selectListItem')) {
+                    const tagValue = element.textContent;
+                    
+                    if (element.classList.contains('selectListItemSelected')) {
+                        element.classList.remove('selectListItemSelected');
+                        document.querySelector('[data-tag-value-selected="'+ tagValue + '"]').closest('div').remove();
+                    } else {
+                        element.classList.add('selectListItemSelected');
+                        document.getElementById('tagsSelected')
+                            .insertAdjacentHTML(
+                                'beforeend', 
+                                `<div class="tagSelected ${type}">
+                                    ${tagValue}
+                                    <span class="monIconCircle">
+                                        <i data-tag-value-selected="${tagValue}" class="far fa-times-circle removeTagSelected"></i>
+                                    </span>
+                                </div>`
+                            );
+                    }
+                }
+            });
+        };   
+    };
+
+    tagSelectedEvent() {
         document.getElementById('tagsSelected').addEventListener('click', function(event) {
             const element = event.target;
-            if (element.classList.contains('closeTagIcon')) {
-                const dataFilterId = element.parentNode.parentNode.dataset.id;
-                document.querySelector('[data-id-filter="'+ dataFilterId + '"]').classList.remove('tagSelected');
-                element.parentNode.parentNode.remove();
+
+            if (element.classList.contains('removeTagSelected')) {
+                const tagValue = element.dataset.tagValueSelected;
+                document.querySelector('[data-tag-value="'+ tagValue + '"]').classList.remove('selectListItemSelected');
+                element.closest('div').remove();
             }
         });
-        
-        // Si je click sur un element LI ingredient
-        tagsIgredients.addEventListener('click', function (event) {
-            const element = event.target;
-            event.preventDefault();
-            
-            let elementValue = element.textContent;
-            // Si je click sur un element LI (ingredient, ustensiles ou materiels)
-            if (element.classList.contains('tags__item')) {
-                
-                // Si le tag est déja séléctionné pas d'ajout
-                if (element.classList.contains('tagSelected')) {
-                    element.classList.remove('tagSelected');
-                    document.querySelector('[data-id="'+ elementValue + '"]').remove();
-                }
-                // Si le tag n'est pas séléctionné ajoute le tag
-                else {
-                    element.classList.add('tagSelected');
-                    document.getElementById('tagsSelected')
-                        .insertAdjacentHTML(
-                            'beforeend', 
-                            `<div class="tagsIgredients" data-id="${elementValue}">
-                                ${elementValue}
-                                <span class="monIconCircle">
-                                    <i class="far fa-times-circle closeTagIcon"></i>
-                                </span>
-                            </div>`
-                        );
-                }
-            }
-        });
-        
-        // Si je click sur un element LI appareils
-        tagsAppareil.addEventListener('click', function (event) {
-            const element = event.target;
-            event.preventDefault();
-            
-            let elementValue = element.textContent;
-            // Si je click sur un element LI (ingredient, ustensiles ou materiels)
-           // if (element.classList.contains('tags__item')) {
-                
-                // Si le tag est déja séléctionné pas d'ajout
-                if (element.classList.contains('tagSelected')) {
-                    element.classList.remove('tagSelected');
-                    document.querySelector('[data-id="'+ elementValue + '"]').remove();
-                }
-                // Si le tag n'est pas séléctionné ajoute le tag
-                else {
-                    element.classList.add('tagSelected');
-                    document.getElementById('tagsSelected')
-                        .insertAdjacentHTML(
-                            'beforeend', 
-                            `<div class="tagsAppareils" data-id="${elementValue}">
-                                ${elementValue}
-                                <span class="monIconCircle">
-                                    <i class="far fa-times-circle closeTagIcon"></i>
-                                </span>
-                            </div>`
-                        );
-                }
-            //}
-        });
-        
-        // Si je click sur un element LI ustensil
-        tagsUstensiles.addEventListener('click', function (event) {
-            const element = event.target;
-            event.preventDefault();
-            
-            let elementValue = element.textContent;
-            // Si je click sur un element LI (ingredient, ustensiles ou materiels)
-           // if (element.classList.contains('tags__item')) {
-            
-                // Si le tag est déja séléctionné pas d'ajout
-                if (element.classList.contains('tagSelected')) {
-                    element.classList.remove('tagSelected');
-                    document.querySelector('[data-id="'+ elementValue + '"]').remove();
-                }
-                // Si le tag n'est pas séléctionné ajoute le tag
-                else {
-                    element.classList.add('tagSelected');
-                    document.getElementById('tagsSelected')
-                        .insertAdjacentHTML(
-                            'beforeend', 
-                            `<div class="tagsUstensiles" data-id="${elementValue}">
-                                ${elementValue}
-                                <span class="monIconCircle">
-                                    <i class="far fa-times-circle closeTagIcon"></i>
-                                </span>
-                            </div>`
-                        );
-                }
-            //}
-        }); 
-    };
+    }
 }
+
 export default DomTagsSelected;
 

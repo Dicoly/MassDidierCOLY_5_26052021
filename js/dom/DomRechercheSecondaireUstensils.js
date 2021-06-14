@@ -8,7 +8,7 @@ class DomRechercheSecondaireUstensils {
         let htmlContent = '';
         //Ajout des LI dans la liste deroulante
         listDesUstensils.forEach(function (item) {
-            htmlContent += `<li class="tags__item" data-id-filter="${item}"><a href="#">${item}</a></li>`;
+            htmlContent += `<li><a class="selectListItem" data-tag-value="${item}" href="#">${item}</a></li>`;
         });
         // Ajouter des ustensils
         let listSelect = document.getElementById('detailListUstensiles');

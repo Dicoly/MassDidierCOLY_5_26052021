@@ -54,14 +54,14 @@ input {
 }
 
 /* Tags selectionnés*/
-.tags__Selected {
+#tagsSelected {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
 }
-.tags__Selected div {
+#tagsSelected div {
   margin: 0.5rem 1rem 1rem 0;
   padding: 6px 8px;
   border-radius: 5px;
@@ -74,16 +74,16 @@ input {
   font-size: 14px;
   font-weight: bold;
 }
-.tags__Selected div .fa-times-circle {
+#tagsSelected div .fa-times-circle {
   margin-left: 10px;
 }
-.tags__Selected .tagsIgredients {
+#tagsSelected .tagSelected.ingredients {
   background-color: #3282f7;
 }
-.tags__Selected .tagsAppareils {
+#tagsSelected .tagSelected.appareils {
   background-color: #68d9a4;
 }
-.tags__Selected .tagsUstensiles {
+#tagsSelected .tagSelected.ustensiles {
   background-color: #ed6454;
 }
 
@@ -137,7 +137,7 @@ input {
   width: 33%;
   margin-bottom: 0.5rem;
 }
-.selectList ul li a.tagSelected {
+.selectList ul li a.selectListItemSelected {
   text-decoration: none;
   color: black;
   font-size: 18px;
@@ -289,7 +289,7 @@ input {
   }
 }
 /*Media Queries mobile*/
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 768px) {
   .main {
     margin: 0 2rem;
   }
@@ -310,6 +310,10 @@ input {
     padding: 5px;
   }
 
+  .selectList ul li {
+    width: 100%;
+  }
+
   #listRecipiesContainer {
     flex-direction: column;
   }
@@ -320,6 +324,18 @@ input {
 
   .figure {
     width: 100%;
+  }
+}
+/*Media Queries tablette*/
+@media screen and (min-width: 768px) {
+  .selectList ul li {
+    width: 50%;
+  }
+}
+/*Media Queries desktop*/
+@media screen and (min-width: 1140px) {
+  .selectList ul li {
+    width: 33%;
   }
 }
 

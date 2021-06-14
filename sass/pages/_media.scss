@@ -20,6 +20,11 @@
             }
         }
     }
+    .selectList {
+        ul li {
+            width: 100%;
+        }
+    }
     #listRecipiesContainer {
         flex-direction: column;
     }
@@ -29,5 +34,23 @@
 
     .figure {
         width: 100%;
+    }
+}
+
+/*Media Queries tablette*/
+@media screen and (min-width: $breakpoint-tablette) {
+    .selectList {
+        ul li {
+            width: 50%;
+        }
+    }
+}
+
+/*Media Queries desktop*/
+@media screen and (min-width: $breakpoint-desktop) {
+    .selectList {
+        ul li {
+            width: 33%;
+        }
     }
 }

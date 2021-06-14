@@ -25,11 +25,11 @@
         </div>
 
         <!--Affichage des tags selectionnés-->
-       <div class="tags__Selected" id="tagsSelected"></div>
+       <div id="tagsSelected"></div>
 
        <!--Section des filtres (ingredients , appareils et ustensils)-->
         <div class="filtresContainer" id="selectContainer">
-            <div class="dropdown selectList" id="searchSecondaire">
+            <div class="dropdown selectList"  data-type="ingredients" id="searchSecondaire">
                 <div class="input-group filtres--ingredients">
                     <input class="col inputFiltres inputIngredients" type="text" id="inputIngredients" name="ingredients" placeholder="Ingrédients">
                     <button type="button" class="btn btnFiltres" id="btnIngredients" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-down show"></i></button>
@@ -38,7 +38,7 @@
                     <ul id="detailListIngredients" class="hide"></ul>
                 </div>
             </div>
-            <div class="dropdown selectList" id="searchSecondaire">
+            <div class="dropdown selectList" data-type="appareils" id="searchSecondaire">
                 <div class="input-group filtres--appareil">
                     <input class="col inputFiltres inputAppareil" type="text" id="inputAppareil" name="appareil" placeholder="Appareil">
                     <button type="button" class="btn btnFiltres" id="btnAppareil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-down show"></i></button>
@@ -47,7 +47,7 @@
                     <ul id="detailListAppareil" class="hide"></ul>
                 </div>
             </div>
-            <div class="dropdown selectList" id="searchSecondaire">
+            <div class="dropdown selectList" data-type="ustensiles" id="searchSecondaire">
                 <div class="input-group filtres--ustensiles">
                     <input class="col inputFiltres inputUstensiles" type="text" id="inputUstensiles" name="ustensiles" placeholder="Ustensiles">
                     <button type="button" class="btn btnFiltres" id="btnUstensiles" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-down show"></i></button>

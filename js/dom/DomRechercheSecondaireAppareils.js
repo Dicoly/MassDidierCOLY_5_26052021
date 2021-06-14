@@ -8,7 +8,7 @@ class DomRechercheSecondaireAppareils {
         let htmlContent = '';
         //Ajout des LI dans la liste deroulante
         listDesAppareils.forEach(function (item) {
-            htmlContent += `<li class="tags__item" data-id-filter="${item}"><a href="#">${item}</a></li>`;
+            htmlContent += `<li><a class="selectListItem" data-tag-value="${item}" href="#">${item}</a></li>`;
         });
         // Ajouter des appareils
         let listSelect = document.getElementById('detailListAppareil');

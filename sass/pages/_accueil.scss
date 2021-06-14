@@ -32,7 +32,7 @@ input {
 }
 /* Tags selectionnés*/
 
-.tags__Selected {
+#tagsSelected {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -54,15 +54,17 @@ input {
             margin-left: 10px; 
         }
     }
-    .tagsIgredients {
-        background-color: $color-ingredients;
-    }
-    .tagsAppareils {
-        background-color: $color-appareil;   
-    }
-    .tagsUstensiles {
-        background-color: $color-ustensiles;   
-    }
+    .tagSelected {
+        &.ingredients {
+            background-color: $color-ingredients;
+        }
+        &.appareils {
+            background-color: $color-appareil;   
+        }
+        &.ustensiles {
+            background-color: $color-ustensiles;   
+        }
+    } 
 }
 
 .monIconCircle {
@@ -115,7 +117,7 @@ input {
             list-style-type: none;
             width: 33%;
             margin-bottom: 0.5rem;
-            a.tagSelected {
+            a.selectListItemSelected {
                 text-decoration: none;
                 color: $color-black;
                 font-size: 18px;
