@@ -1,18 +1,24 @@
-import DomRechercheSecondaireIngredients from './dom/DomRechercheSecondaireIngredients.js';
-import DomRechercheSecondaireAppareils from './dom/DomRechercheSecondaireAppareils.js';
-import DomRechercheSecondaireUstensils from './dom/DomRechercheSecondaireUstensils.js';
+import DomRechercheSecondaire from './dom/DomRechercheSecondaire.js';
+//import DomRechercheSecondaireAppareils from './dom/DomRechercheSecondaireAppareils.js';
+//import DomRechercheSecondaireUstensils from './dom/DomRechercheSecondaireUstensils.js';
 import ResultatDeLaRecherche from './data/fixtures.js';
 import DomServiceRecipies from './dom/DomServiceRecipies.js';
 import DomTagsSelected from './dom/DomTagsSelected.js';
 
 
+//let domlist = new DomSelectList();
+
+
 //liste deroulante des ingredients, appariels et des ustensils
-let listIngredients = new DomRechercheSecondaireIngredients();
+let listIngredients = new DomRechercheSecondaire("ingredients");
+let listAppareils = new DomRechercheSecondaire("appareils");
+let listUstensils = new DomRechercheSecondaire("ustensiles");
+
 listIngredients.remplirListeDeroulante(ResultatDeLaRecherche.ingredients);
-let listAppareils = new DomRechercheSecondaireAppareils();
 listAppareils.remplirListeDeroulante(ResultatDeLaRecherche.appliance);
-let listUstensils = new DomRechercheSecondaireUstensils();
 listUstensils.remplirListeDeroulante(ResultatDeLaRecherche.ustensils);
+
+
 
 // au click d'un tag sa l'ajoute a la liste des tags selectionnés ou le retire
 const tagsSelected = document.getElementById('tagsSelected');
