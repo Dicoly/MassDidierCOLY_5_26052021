@@ -154,7 +154,7 @@ input {
     }
 }
 
-.show::placeholder {
+.show .inputFiltres::placeholder {
     color: $color-inactive;
     font-size: 18px;
 }

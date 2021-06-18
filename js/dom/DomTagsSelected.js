@@ -12,6 +12,7 @@
  *          Ex: lait de coco, four et verre
  * .removeTagSelected : permet de retirer un tag selectionné
  */
+
 class DomTagsSelected {
     //Création tags selectionnés
     selectListEvent() {

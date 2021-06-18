@@ -4,7 +4,6 @@ class DomServiceRecipies {
     }
 
     afficherLesRecettes(recettes) {
-        //
         this.container.textContent = '';
         let htmlContent = '';
 

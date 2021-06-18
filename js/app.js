@@ -1,23 +1,24 @@
-import DomRechercheSecondaire from './dom/DomRechercheSecondaire.js';
-//import DomRechercheSecondaireAppareils from './dom/DomRechercheSecondaireAppareils.js';
-//import DomRechercheSecondaireUstensils from './dom/DomRechercheSecondaireUstensils.js';
+import DomSelectList from './dom/DomSelectList.js';
 import ResultatDeLaRecherche from './data/fixtures.js';
 import DomServiceRecipies from './dom/DomServiceRecipies.js';
 import DomTagsSelected from './dom/DomTagsSelected.js';
+import SearchTags from  './search/SearchTags.js';
+import DomFiltresList from './dom/DomFiltresList.js';
 
 
-//let domlist = new DomSelectList();
 
 
-//liste deroulante des ingredients, appariels et des ustensils
-let listIngredients = new DomRechercheSecondaire("ingredients");
-let listAppareils = new DomRechercheSecondaire("appareils");
-let listUstensils = new DomRechercheSecondaire("ustensiles");
+//Recherche à "vide" pour obtenir la liste complete à partir du resultat de la recherche
+let domFiltresLists = new DomFiltresList();
+domFiltresLists.tagsList();
 
-listIngredients.remplirListeDeroulante(ResultatDeLaRecherche.ingredients);
-listAppareils.remplirListeDeroulante(ResultatDeLaRecherche.appliance);
-listUstensils.remplirListeDeroulante(ResultatDeLaRecherche.ustensils);
+//Creation de la listes deroulante des ingredients, appariels et des ustensils
+let domlist = new DomSelectList();
+domlist.creerLesTroisListesSelect(ResultatDeLaRecherche);
 
+//Recherche à "vide" pour obtenir tous les infos
+let tagsResearch = new SearchTags();
+tagsResearch.searchTags(ResultatDeLaRecherche);
 
 
 // au click d'un tag sa l'ajoute a la liste des tags selectionnés ou le retire
