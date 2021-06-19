@@ -2,15 +2,11 @@ import DomSelectList from './dom/DomSelectList.js';
 import ResultatDeLaRecherche from './data/fixtures.js';
 import DomServiceRecipies from './dom/DomServiceRecipies.js';
 import DomTagsSelected from './dom/DomTagsSelected.js';
-import SearchTags from  './search/SearchTags.js';
-import DomFiltresList from './dom/DomFiltresList.js';
+import SearchTags from  './dom/SearchTags.js';
+import SearchEvent from './search/SearchEvent.js';
 
 
-
-
-//Recherche à "vide" pour obtenir la liste complete à partir du resultat de la recherche
-let domFiltresLists = new DomFiltresList();
-domFiltresLists.tagsList();
+SearchEvent.watch();
 
 //Creation de la listes deroulante des ingredients, appariels et des ustensils
 let domlist = new DomSelectList();
@@ -36,4 +32,4 @@ const listRecipiesContainer = document.getElementById('listRecipiesContainer');
 let domRecipiesService = new DomServiceRecipies(listRecipiesContainer);
 domRecipiesService.afficherLesRecettes(ResultatDeLaRecherche.recettesFiltrees);
 
-console.log(ResultatDeLaRecherche);
+//console.log(ResultatDeLaRecherche);

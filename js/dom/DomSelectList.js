@@ -45,7 +45,7 @@ class DomSelectList {
             bouton.addEventListener('click', function () {
                 document.getElementById(target).classList.toggle('hide'); //affiche la liste
                 bouton.classList.toggle('show'); // rotation icon bouton
-                document.getElementById('input-' + this.name).classList.toggle('show'); //changement couleur placeholder
+                //document.getElementById('input-' + this.name).classList.toggle('show'); //changement couleur placeholder
             });  
         };      
     };

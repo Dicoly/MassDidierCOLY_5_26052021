@@ -29,7 +29,7 @@ class DomTagsSelected {
                     
                     if (element.classList.contains('selectListItemSelected')) {
                         element.classList.remove('selectListItemSelected');
-                        document.querySelector('[data-tag-value-selected="'+ tagValue + '"]').closest('div').remove();
+                        document.querySelector('[data-tag-value-selected="'+ tagValue + '"]').closest('.tagSelected').remove();
                     } else {
                         element.classList.add('selectListItemSelected');
                         document.getElementById('tagsSelected')
@@ -55,7 +55,7 @@ class DomTagsSelected {
             if (element.classList.contains('removeTagSelected')) {
                 const tagValue = element.dataset.tagValueSelected;
                 document.querySelector('[data-tag-value="'+ tagValue + '"]').classList.remove('selectListItemSelected');
-                element.closest('div').remove();
+                element.closest('.tagSelected').remove();
             }
         });
     }
