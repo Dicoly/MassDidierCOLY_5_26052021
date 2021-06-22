@@ -45,10 +45,10 @@ class DomTagsSelected {
                     }
                 }
             });
-        };   
+        };
     };
 
-    tagSelectedEvent() {
+    /*tagSelectedEvent() {
         document.getElementById('tagsSelected').addEventListener('click', function(event) {
             const element = event.target;
 
@@ -58,7 +58,7 @@ class DomTagsSelected {
                 element.closest('.tagSelected').remove();
             }
         });
-    }
+    }*/
 }
 
 export default DomTagsSelected;

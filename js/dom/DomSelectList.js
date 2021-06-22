@@ -12,7 +12,7 @@
 
 class DomSelectList {
     constructor() {
-        this.afficherOuMasquerLaListeDesTags();
+        //this.afficherOuMasquerLaListeDesTags();
     }
 
     //////////// creer Les Trois Listes Select
@@ -35,7 +35,7 @@ class DomSelectList {
         listSelect.insertAdjacentHTML('beforeend', htmlContent);
     };
 
-    //Affichage de la classe Hide contenant la liste des tags
+    /*//Affichage de la classe Hide contenant la liste des tags
     afficherOuMasquerLaListeDesTags() {
         const boutonsFiltres = document.getElementsByClassName('btnFiltres');
 
@@ -48,7 +48,7 @@ class DomSelectList {
                 //document.getElementById('input-' + this.name).classList.toggle('show'); //changement couleur placeholder
             });  
         };      
-    };
+    };*/
 }
 
 export default DomSelectList;

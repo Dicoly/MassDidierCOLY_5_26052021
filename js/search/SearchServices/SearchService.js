@@ -1,5 +1,5 @@
-import SearchParam from "./SearchParam.js";
-import RecipesDB from "./../data/recipes.js";
+import SearchParams from "../SearchParams.js";
+import RecipesDB from "../../data/recipes.js";
 
 class SearchService {
     constructor() {
@@ -7,7 +7,7 @@ class SearchService {
     }
 
     launch() {
-        this.searchParam = new SearchParam();
+        this.searchParams = new SearchParams();
         this.result = []; //@todo remplacer par SearchResult
         console.log(this)
     }
