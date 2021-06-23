@@ -1,10 +1,7 @@
 import recipes from "../../data/recipes.js";
 
 class MainSearch {
-
     static research(searchParams) {
-        
-        console.log(searchParams)
         this.filteredRecipes = new Set();
         this.recipes = recipes;
 
@@ -21,8 +18,6 @@ class MainSearch {
                 }
             })
         });
-
-        console.log(this.filteredRecipes)
         return this.filteredRecipes;
     }
 }

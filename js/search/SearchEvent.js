@@ -1,52 +1,45 @@
+import DomBuilder from '../dom/DomBuilder.js';
 import SearchService from './SearchServices/SearchService.js';
 
 class SearchEvent {
+    constructor() {
+        this.searchService = new SearchService();
+        this.domBuilder = new DomBuilder();
+    }
 
-    static watch() {
-        const searchService = new SearchService();
+    launchSearch() {
+        const searchResult = this.searchService.launch();
+        this.domBuilder.afficherLesRecettes(searchResult.recipes);
+        this.domBuilder.creerLesTroisListesSelect(searchResult);
+    }
 
+    watch() {
         //Au click sur le bouton Search pour lancer la recherche
         document.getElementById('launchSearch').addEventListener('click', () => {
-            searchService.launch();
+            this.launchSearch();
         });
 
         //Pour la recherche principale avec le input.
-        const inputSearchBar = document.getElementById('inputSearchBar');
-        inputSearchBar.addEventListener('keyup', searchService.launch);
-
-        const inputFiltres = document.getElementsByClassName('inputFiltres');
-        for (let input of inputFiltres) {
-            input.addEventListener('keyup', searchService.launch); 
-        };
+        document.getElementById('inputSearchBar').addEventListener('keyup', () => {
+            this.launchSearch();
+        });
 
         // Au click sur l'element seleectionné pour la retirer des tags selecrtionnés
-        document.getElementById('selectContainer').addEventListener('click', (event) =>{
+        document.getElementById('selectContainer').addEventListener('click', (event) => {
             const element = event.target;
             if (element.classList.contains('selectListItem')) {
-                searchService.launch();
+                this.launchSearch();
             }
         });
 
-        //Affichage ou masquer la classe Hide contenant la liste des tags
-        const boutonsFiltres = document.getElementsByClassName('btnFiltres');
-            for (let bouton of boutonsFiltres) {
-                const target = bouton.dataset.target; //data-target=""
-                bouton.addEventListener('click', function () {
-                    document.getElementById(target).classList.toggle('hide'); //affiche la liste
-                    bouton.classList.toggle('show'); // rotation icon bouton
-                    searchService.launch();
-                    //document.getElementById('input-' + this.name).classList.toggle('show'); //changement couleur placeholder
-                });  
-            };      
-
         // Au click sur la croix du tag selectionné pour supprimer.
-        document.getElementById('tagsSelected').addEventListener('click', function(event) {
+        document.getElementById('tagsSelected').addEventListener('click', (event) => {
             const element = event.target;
             if (element.classList.contains('removeTagSelected')) {
                 const tagValue = element.dataset.tagValueSelected;
                 document.querySelector('[data-tag-value="'+ tagValue + '"]').classList.remove('selectListItemSelected');
                 element.closest('.tagSelected').remove();
-                searchService.launch();
+                this.launchSearch();
             }
         });
     }

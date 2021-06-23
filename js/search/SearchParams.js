@@ -3,16 +3,12 @@ import ResultatDeLaRecherche from '../data/fixtures.js';
  * Contient tous les critéres de recherches
  *          Ex : input principal valeur et tags selectionnés 
  */
-class SearchParams {
-    
+class SearchParams { 
     constructor() {
         this.mainInput = document.getElementById('inputSearchBar').value;
         this.ingredients = this.getIngredients();
         this.appareils = this.getAppareils();
         this.ustensiles = this.getUstensiles();
-        /*console.log(this.appareils)
-        console.log(this.ingredients)
-        console.log(this.ustensiles)*/
     };
     
     getMainInput() {

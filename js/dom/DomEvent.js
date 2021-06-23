@@ -13,7 +13,11 @@
  * .removeTagSelected : permet de retirer un tag selectionné
  */
 
-class DomTagsSelected {
+class DomEvent {
+    watch() {
+        this.selectListEvent();
+    }
+
     //Création tags selectionnés
     selectListEvent() {
        let selectLists = document.getElementsByClassName('selectList');
@@ -47,19 +51,7 @@ class DomTagsSelected {
             });
         };
     };
-
-    /*tagSelectedEvent() {
-        document.getElementById('tagsSelected').addEventListener('click', function(event) {
-            const element = event.target;
-
-            if (element.classList.contains('removeTagSelected')) {
-                const tagValue = element.dataset.tagValueSelected;
-                document.querySelector('[data-tag-value="'+ tagValue + '"]').classList.remove('selectListItemSelected');
-                element.closest('.tagSelected').remove();
-            }
-        });
-    }*/
 }
 
-export default DomTagsSelected;
+export default DomEvent;
 
