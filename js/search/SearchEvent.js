@@ -13,7 +13,12 @@ class SearchEvent {
         //Pour la recherche principale avec le input.
         const inputSearchBar = document.getElementById('inputSearchBar');
         inputSearchBar.addEventListener('keyup', searchService.launch);
-        
+
+        const inputFiltres = document.getElementsByClassName('inputFiltres');
+        for (let input of inputFiltres) {
+            input.addEventListener('keyup', searchService.launch); 
+        };
+
         // Au click sur l'element seleectionné pour la retirer des tags selecrtionnés
         document.getElementById('selectContainer').addEventListener('click', (event) =>{
             const element = event.target;
@@ -30,7 +35,7 @@ class SearchEvent {
                     document.getElementById(target).classList.toggle('hide'); //affiche la liste
                     bouton.classList.toggle('show'); // rotation icon bouton
                     searchService.launch();
-                    document.getElementById('input-' + this.name).classList.toggle('show'); //changement couleur placeholder
+                    //document.getElementById('input-' + this.name).classList.toggle('show'); //changement couleur placeholder
                 });  
             };      
 

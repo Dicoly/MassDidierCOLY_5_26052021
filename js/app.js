@@ -1,4 +1,5 @@
 import ResultatDeLaRecherche from './data/fixtures.js';
+import recipes from './data/recipes.js';
 import DomSelectList from './dom/DomSelectList.js';
 import DomServiceRecipies from './dom/DomServiceRecipies.js';
 import DomTagsSelected from './dom/DomTagsSelected.js';
@@ -21,10 +22,10 @@ domTagsSelect.selectListEvent();
 //domTagsSelect.tagSelectedEvent();
 
 //Pour l'article contenant des recettes
-const listRecipiesContainer = document.getElementById('listRecipiesContainer');
+//const listRecipiesContainer = document.getElementById('listRecipiesContainer');
 
 //Affiche les recettes
-let domRecipiesService = new DomServiceRecipies(listRecipiesContainer);
-domRecipiesService.afficherLesRecettes(ResultatDeLaRecherche.recettesFiltrees);
+let domRecipiesService = new DomServiceRecipies();
+domRecipiesService.afficherLesRecettes(recipes);
 
 //console.log(ResultatDeLaRecherche);

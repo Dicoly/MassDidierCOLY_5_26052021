@@ -1,16 +1,15 @@
 class DomServiceRecipies {
-    constructor(domElementContainer) {
+    /*constructor(domElementContainer) {
         this.container = domElementContainer;
-    }
+    }*/
 
     afficherLesRecettes(recettes) {
-        this.container.textContent = '';
         let htmlContent = '';
 
-        recettes.forEach(recette => {
+        recettes.forEach(recipe => {
             //Recuperation des ingredients de la recettes
             let listIngredientsHtml = '';
-            recette.ingredients.forEach(ingredient => {
+            recipe.ingredients.forEach(ingredient => {
                 let unit = '';
                 let quantity = '';
                 //permet d'affiche l'unité s'il en existe
@@ -27,20 +26,20 @@ class DomServiceRecipies {
                                         </li>`;
             })
             //Contenu d'une recette
-            htmlContent += `<div class="recettesContainer">
+            htmlContent += `<div class="recettesContainer" id=${recipe.id}>
                                 <figure class="figure">
                                 <div ><img class="figure__img" src="images/cebon.jpg" alt="" title=""></div>
                                     <figcaption class="figcaption">
-                                        <h3 class="figcaption__titre">${recette.name}</h3>
-                                        <p class="figcaption__temps"><i class="far fa-clock"></i><strong> ${recette.time} min </strong></p>
+                                        <h3 class="figcaption__titre">${recipe.name}</h3>
+                                        <p class="figcaption__temps"><i class="far fa-clock"></i><strong> ${recipe.time} min </strong></p>
                                         <div><ul class="figcaption__ingredients">${listIngredientsHtml}</ul></div>
-                                        <p class="figcaption__description">${recette.description}</p>
+                                        <p class="figcaption__description">${recipe.description}</p>
                                     </figcaption>
                                 <figure>
                             </div>`;
         });
         //Affiche la section  des recettes
-        this.container.insertAdjacentHTML('beforeend', htmlContent);
+        document.getElementById('listRecipiesContainer').insertAdjacentHTML('beforeend', htmlContent);
     }
 }
 

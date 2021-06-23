@@ -16,7 +16,7 @@ class SearchParams {
     };
     
     getMainInput() {
-        return this.mainInput;
+        return this.mainInput === '';
     };
 
     isValidForPrimarySearch() {
