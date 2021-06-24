@@ -1,4 +1,3 @@
-import ResultatDeLaRecherche from '../data/fixtures.js';
 /**
  * Contient tous les critéres de recherches
  *          Ex : input principal valeur et tags selectionnés 
@@ -12,7 +11,11 @@ class SearchParams {
     };
     
     getMainInput() {
-        return this.mainInput === '';
+        return (
+            this.mainInput === '' || 
+            this.ingredients.length == 0 && 
+            this.appareils.length == 0 && 
+            this.ustensiles.length == 0)
     };
 
     isValidForPrimarySearch() {
@@ -21,11 +24,21 @@ class SearchParams {
 
     isValidForSecondarySearch() {
         return (
+            this.isValidForPrimarySearch() &&
             this.ingredients.length > 0 ||
             this.appareils.length > 0 ||
             this.ustensiles.length > 0   
         );
     };
+
+    isValidForTertiarySearch() {
+        return (
+            this.mainInput === '' && 
+            this.ingredients.length > 0 ||
+            this.appareils.length > 0 ||
+            this.ustensiles.length > 0
+        );
+    }
 
     //retourne un tableau des éléments selectionnés pour une catégorie
     getIngredients() {
