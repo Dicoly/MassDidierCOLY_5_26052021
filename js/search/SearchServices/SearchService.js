@@ -17,17 +17,17 @@ class SearchService {
         
        // si aucun param, affiche toutes les recettes
         if (this.searchParams.getMainInput()) {
-            this.searchResultFinal = MainSearch.research(this.searchParams); //30
+            this.searchResultFinal = MainSearch.research(this.searchParams); //100
             this.searchResult.recipes = this.searchResultFinal;
             this.searchResult.recipes.forEach(recipe => {
                 recipe.ingredients.forEach(element => {
                     this.searchResult.ingredients.add(element.ingredient);
                 });
                 recipe.appliance.forEach(element => {
-                    this.searchResult.appareils.add(element)
+                    this.searchResult.appareils.add(element);
                 });
                 recipe.ustensils.forEach(element => {
-                    this.searchResult.ustensiles.add(element)
+                    this.searchResult.ustensiles.add(element);
                 });
             });
 

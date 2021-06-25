@@ -24,6 +24,8 @@ class DomBuilder {
 
     // Creation  les LI dans la liste des 
     remplirListeDeroulante(name, elements) {
+        document.getElementById('detailList-' + name).textContent = '';
+
         let htmlContent = '';
         //Ajout des LI dans la liste deroulante
         for (let element of elements) {
@@ -52,6 +54,8 @@ class DomBuilder {
 
     //Creation et afficher des recettes
     afficherLesRecettes(recettes) {
+        document.getElementById('listRecipiesContainer').textContent = '';
+        
         let htmlContent = '';
 
         recettes.forEach(recipe => {
