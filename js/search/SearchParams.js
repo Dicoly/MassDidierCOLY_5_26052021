@@ -8,35 +8,40 @@ class SearchParams {
         this.ingredients = this.getIngredients();
         this.appareils = this.getAppareils();
         this.ustensiles = this.getUstensiles();
+        this.allSelected = new Set([...this.getIngredients(),...this.getAppareils(),...this.getUstensiles()]);
     };
     
     getMainInput() {
         return (
-            this.mainInput === '' || 
-            this.ingredients.length == 0 && 
+            this.mainInput.length <= 2 ||
+            (this.ingredients.length == 0 && 
             this.appareils.length == 0 && 
             this.ustensiles.length == 0)
+        )
     };
 
     isValidForPrimarySearch() {
-        return this.mainInput.length > 2;
+        return this.mainInput.length > 2 &&
+        (this.ingredients.length == 0 && 
+        this.appareils.length == 0 && 
+        this.ustensiles.length == 0)
     };
 
     isValidForSecondarySearch() {
         return (
-            this.isValidForPrimarySearch() &&
-            this.ingredients.length > 0 ||
-            this.appareils.length > 0 ||
-            this.ustensiles.length > 0   
-        );
+            this.mainInput.length > 2 &&
+            (this.ingredients.length !== 0 ||
+            this.appareils.length !== 0 ||
+            this.ustensiles.length !== 0 ) 
+        )
     };
 
     isValidForTertiarySearch() {
         return (
             this.mainInput === '' && 
-            this.ingredients.length > 0 ||
-            this.appareils.length > 0 ||
-            this.ustensiles.length > 0
+            this.ingredients.length !== 0 ||
+            this.appareils.length !== 0 ||
+            this.ustensiles.length !== 0
         );
     }
 
