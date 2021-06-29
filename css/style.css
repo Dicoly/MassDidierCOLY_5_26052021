@@ -150,6 +150,9 @@ input {
   color: #ffffff;
   text-decoration: none;
 }
+.selectList ul li a.hide {
+  display: none;
+}
 .selectList .hide {
   display: none;
 }

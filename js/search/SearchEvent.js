@@ -1,10 +1,12 @@
 import DomBuilder from '../dom/DomBuilder.js';
+import TagsResearch from '../dom/TagsResearch.js';
 import SearchService from './SearchServices/SearchService.js';
 
 class SearchEvent {
     constructor() {
         this.searchService = new SearchService();
         this.domBuilder = new DomBuilder();
+        //this.TagsResearch = new TagsResearch();
     }
 
     launchSearch() {
@@ -41,6 +43,11 @@ class SearchEvent {
                 element.closest('.tagSelected').remove();
                 this.launchSearch();
             }
+        });
+
+        //Pour filtrer les tags avec le input
+        [...document.getElementsByClassName('inputFiltres')].forEach((element) => {
+            element.addEventListener('keyup', TagsResearch.filterTags);
         });
     }
 }

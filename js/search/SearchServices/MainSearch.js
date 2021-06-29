@@ -6,15 +6,20 @@ class MainSearch {
         this.recipes = recipes;
 
         this.recipes.forEach(recipe => {
-            if (recipe.name.toLowerCase().indexOf(searchParams.mainInput) > -1) {
+            const recipeName = recipe.name.toLowerCase();
+            const inputValue = searchParams.mainInput.toLowerCase();
+
+            if (recipeName.indexOf(inputValue) > -1) {
                 this.filteredRecipes.add(recipe)
-            } else if (recipe.description.toLowerCase().indexOf(searchParams.mainInput) > -1) {
+            } else if (recipe.description.toLowerCase().indexOf(inputValue) > -1) {
                 this.filteredRecipes.add(recipe)
             }
-            else if (recipe.ingredients.forEach((element) => {
-                    element.ingredient.toLowerCase().indexOf(searchParams.mainInput) > -1;   
-                    })) {
-                this.filteredRecipes.add(recipe)
+            else {
+                recipe.ingredients.forEach((element) => {
+                    if (element.ingredient.toLowerCase().indexOf(inputValue) > -1) {
+                        this.filteredRecipes.add(recipe);
+                    }
+                }); 
             }
         });
         return this.filteredRecipes;

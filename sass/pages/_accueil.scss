@@ -130,6 +130,9 @@ input {
                 color: $color-white;
                 text-decoration: none;
             }
+            a.hide {
+                display: none;
+            }
         }
     }
     .hide {

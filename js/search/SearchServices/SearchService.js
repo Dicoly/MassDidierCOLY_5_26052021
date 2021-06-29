@@ -17,30 +17,17 @@ class SearchService {
         //this.secondarySearch = new SecondarySearch();
         
        // si aucun param, affiche toutes les recettes
-        if (this.searchParams.getMainInput() || this.searchParams.isValidForPrimarySearch() || this.searchParams.isValidForSecondarySearch()) {
+        if (this.searchParams.isValidForPrimarySearch()) {
             this.searchResultFinal = MainSearch.research(this.searchParams); //100
-            this.searchResult.recipes = this.searchResultFinal;
-            this.searchResult.recipes.forEach(recipe => {
-                recipe.ingredients.forEach(element => {
-                    this.searchResult.ingredients.add(element.ingredient);
-                });
-                recipe.appliance.forEach(element => {
-                    this.searchResult.appareils.add(element);
-                });
-                recipe.ustensils.forEach(element => {
-                    this.searchResult.ustensiles.add(element);
-                });
-            });
-
+            this.searchResult.buildRecipes(this.searchResultFinal);
         }
 
         //this.searchResult.allFilter = [...this.searchResult.ingredients,...this.searchResult.appareils,...this.searchResult.ustensiles];
 
         //this.searchResult.ingredients.add('lait de coco', 'poulet');
         //this.searchResult.recipes = this.searchResultFinal;
-        console.log(this.searchResult);
+        console.dir(this);
         return this.searchResult;
-
     }
 }   
 
