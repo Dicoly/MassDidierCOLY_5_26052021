@@ -12,24 +12,16 @@ class SearchParams {
     };
     
     isEmptySearch() {
-        return (
-            this.mainInput.length <= 2 ||
-            (this.ingredients.length == 0 && 
-            this.appareils.length == 0 && 
-            this.ustensiles.length == 0)
-        )
+        return this.mainInput === '';
     };
 
     isValidForPrimarySearch() {
-        return this.mainInput.length > 2;
-        /*(this.ingredients.length == 0 && 
-        this.appareils.length == 0 && 
-        this.ustensiles.length == 0)*/
+        return this.mainInput.trim().length > 2;
     };
 
     isValidForSecondarySearch() {
         return (
-            this.mainInput.length > 2 &&
+            this.mainInput.trim().length > 2 &&
             (this.ingredients.length !== 0 ||
             this.appareils.length !== 0 ||
             this.ustensiles.length !== 0 ) 

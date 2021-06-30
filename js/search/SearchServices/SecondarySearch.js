@@ -1,25 +1,26 @@
 import recipes from '../../data/recipes.js';
+
 class SecondarySearch {
-    /*static research(searchResult, searchParams) {
+    static research(searchResult, searchParams) {
         this.SearchSecondaryResult = new Set();
-        console.log(this.SearchSecondaryResult)
-        if (searchParams.ingredients.length !== 0) {
-            //searchParams.ingredients.forEach(ingrSelected => {
-                
-                searchResult.forEach(recipe => {
-                    let isFoundIngr = true;
-                    searchParams.ingredients.forEach((element) => {
-                    isFoundIngr &= recipe.ingredients.findIndex(
-                        (ingredient) => ingredient.ingredient.indexOf(element) > -1,
-                    ) > -1;
-                    });
-                    if (isFoundIngr) {
-                        this.SearchSecondaryResult.push(recipe);
-                    }
-                });
-            //});
-        }
-    }*/
+
+        searchResult.forEach(recipe => {
+
+            recipe.allProduct = new Set([
+                ...recipe.ingredients.map(element => (element.ingredient)),
+                ...recipe.appliance,
+                ...recipe.ustensils
+            ]);
+            
+            let indexOfRecipe = recipe.id - 1;
+
+            if (Array.from(searchParams.allSelected).every(element => Array.from(recipes[indexOfRecipe].allProduct).includes(element))) {
+                this.SearchSecondaryResult.add(recipe);
+            }
+        });
+
+        return this.SearchSecondaryResult;
+    }
 }
 
 export default SecondarySearch;
