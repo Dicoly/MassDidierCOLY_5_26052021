@@ -8,7 +8,7 @@ class SearchService {
     constructor() {
         this.recipes = RecipesDB;
         //this.searchMainRecipesResult = this.recipes; //100
-        this.searchResultFinal; //100
+        this.searchResultFinal = this.recipes; //100
     }
 
     launch() {

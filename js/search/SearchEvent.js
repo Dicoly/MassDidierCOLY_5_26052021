@@ -6,7 +6,6 @@ class SearchEvent {
     constructor() {
         this.searchService = new SearchService();
         this.domBuilder = new DomBuilder();
-        //this.TagsResearch = new TagsResearch();
     }
 
     launchSearch() {
