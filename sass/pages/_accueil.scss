@@ -75,6 +75,7 @@ input {
 .filtresContainer {
     display: flex;
     flex-wrap: wrap;
+    position: absolute;
 }
 
 /*Listes des tags*/
@@ -202,6 +203,7 @@ input {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 5rem;
 }
 
 .figure {
@@ -237,7 +239,7 @@ input {
             }
         }
         &__ingredients {
-            position: absolute;
+           // position: absolute;
             overflow: hidden;
             text-overflow: ellipsis;
             height: 105px;
@@ -261,6 +263,7 @@ input {
             float: right;
             font-size: 12px;
             font-family: "Roboto", sans-serif;
+            margin-top: -7.5rem;
         }  
     }
 }

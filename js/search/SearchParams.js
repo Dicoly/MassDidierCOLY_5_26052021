@@ -10,27 +10,19 @@ class SearchParams {
         this.ustensiles = this.getUstensiles();
         this.allSelected = new Set([...this.getIngredients(),...this.getAppareils(),...this.getUstensiles()]);
     };
-    
-    isEmptySearch() {
-        return this.mainInput === '';
-    };
 
     isValidForPrimarySearch() {
-        return this.mainInput.trim().length > 2;
+        return (
+            this.mainInput.trim().length > 2 &&
+            this.ingredients.length !== 0 ||
+            this.appareils.length !== 0 ||
+            this.ustensiles.length !== 0
+        )
     };
 
     isValidForSecondarySearch() {
         return (
-            this.mainInput.trim().length > 2 &&
-            (this.ingredients.length !== 0 ||
-            this.appareils.length !== 0 ||
-            this.ustensiles.length !== 0 ) 
-        )
-    };
-
-    isValidForTertiarySearch() {
-        return (
-            this.mainInput === '' && 
+            this.mainInput.trim().length === '' && 
             this.ingredients.length !== 0 ||
             this.appareils.length !== 0 ||
             this.ustensiles.length !== 0
@@ -40,6 +32,7 @@ class SearchParams {
     //retourne un tableau des éléments selectionnés pour une catégorie
     getIngredients() {
         const ingredients = new Set();
+        //boucle sur le tableau précédent et pour chaque element, stocke l'element selectionné dans un nouveau tableau
         const ingredientsDom = Array.from(document.querySelectorAll('#detailList-ingredients .selectListItemSelected'))
         ingredientsDom.forEach( element => {
         ingredients.add(element.innerHTML);
