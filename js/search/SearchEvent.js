@@ -26,12 +26,8 @@ class SearchEvent {
         });
 
         // Au click sur l'element seleectionné pour la retirer des tags selecrtionnés
-        document.getElementById('selectContainer').addEventListener('click', (event) => {
-            const element = event.target;
-            event.preventDefault();
-            if (element.classList.contains('selectListItem')) {
+        document.getElementById('selectContainer').addEventListener('click', () => {
                 this.launchSearch();
-            }
         });
 
         // Au click sur la croix du tag selectionné pour supprimer.

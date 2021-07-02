@@ -24,7 +24,7 @@ class DomBuilder {
 
     // Creation  les LI dans la liste des 
     remplirListeDeroulante(name, elements) {
-        document.getElementById('detailList-' + name).textContent = '';
+        //document.getElementById('detailList-' + name).textContent = '';
 
         let htmlContent = '';
         //Ajout des LI dans la liste deroulante

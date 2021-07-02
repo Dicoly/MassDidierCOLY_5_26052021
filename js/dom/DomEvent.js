@@ -23,6 +23,7 @@ class DomEvent {
        let selectLists = document.getElementsByClassName('selectList');
 
        for (let item of selectLists) {
+           // Si je click sur un element LI (ingredient, ustensiles ou materiels)
             item.addEventListener('click', function (event) {
                 const element = event.target;
                 const type = item.dataset.type;
@@ -30,11 +31,11 @@ class DomEvent {
 
                 if (element.classList.contains('selectListItem')) {
                     const tagValue = element.textContent;
-                    
+                    // Si le tag est déja sélectionné
                     if (element.classList.contains('selectListItemSelected')) {
                         element.classList.remove('selectListItemSelected');
                         document.querySelector('[data-tag-value-selected="'+ tagValue + '"]').closest('.tagSelected').remove();
-                    } else {
+                    } else { // Si le tag n'est pas sélectionné
                         element.classList.add('selectListItemSelected');
                         document.getElementById('tagsSelected')
                             .insertAdjacentHTML(
