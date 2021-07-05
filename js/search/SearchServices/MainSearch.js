@@ -10,9 +10,9 @@ class MainSearch {
             const inputValue = searchParams.mainInput.toLowerCase();
 
             if (recipeName.indexOf(inputValue) > -1) {
-                this.filteredRecipes.add(recipe)
+                this.filteredRecipes.add(recipe);
             } else if (recipe.description.toLowerCase().indexOf(inputValue) > -1) {
-                this.filteredRecipes.add(recipe)
+                this.filteredRecipes.add(recipe);
             }
             else {
                 recipe.ingredients.forEach((element) => {

@@ -5,7 +5,7 @@ class TagsResearch {
         console.log(event)
         const dropdown = event.target.parentElement.parentElement;
       
-        [...dropdown.getElementsByTagName('a')].forEach((element) => {
+        [...dropdown.getElementsByTagName('li')].forEach((element) => {
             const txtValue = element.textContent || element.innerText;
             
             if (txtValue.toLowerCase().indexOf(filter) > -1) {
