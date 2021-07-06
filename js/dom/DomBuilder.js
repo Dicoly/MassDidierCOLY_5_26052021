@@ -16,25 +16,30 @@ class DomBuilder {
     }
 
     //////////// creer Les Trois Listes Select
-    creerLesTroisListesSelect(ResultatDeLaRecherche) {
-        this.remplirListeDeroulante('ingredients', ResultatDeLaRecherche.ingredients);
-        this.remplirListeDeroulante('appareils', ResultatDeLaRecherche.appareils);
-        this.remplirListeDeroulante('ustensiles', ResultatDeLaRecherche.ustensiles);
+    creerLesTroisListesSelect(ResultatDeLaRecherche, searchParams) {
+        this.remplirListeDeroulante('ingredients', ResultatDeLaRecherche.ingredients, searchParams.ingredients);
+        this.remplirListeDeroulante('appareils', ResultatDeLaRecherche.appareils, searchParams.appareils);
+        this.remplirListeDeroulante('ustensiles', ResultatDeLaRecherche.ustensiles, searchParams.ustensiles);
     };
 
     // Creation  les LI dans la liste des 
-    remplirListeDeroulante(name, elements) {
-        //document.getElementById('detailList-' + name).textContent = '';
-
+    remplirListeDeroulante(name, elements, elementsSelected) {
+ 
         let htmlContent = '';
         //Ajout des LI dans la liste deroulante
         for (let element of elements) {
-            htmlContent += `<li ><a class="selectListItem" data-tag-value="${element}" href="#">${element}</a></li>`;
+            let classes = "selectListItem";
+            //Ajout de la classe selectListItemSelected si click sur l'element
+            if (elementsSelected.has(element)) {
+                classes += " selectListItemSelected";
+            }
+        
+            htmlContent += `<li ><a class="${classes}" data-tag-value="${element}" href="#">${element}</a></li>`;
         }
 
         // Ajouter des Li dans les ul pour les ingredients, appareils et les ustensils
         let listSelect = document.getElementById('detailList-' + name);
-        listSelect.insertAdjacentHTML('beforeend', htmlContent);
+        listSelect.innerHTML = htmlContent;
     };
 
     //Affichage de la classe Hide contenant la liste des tags
@@ -47,7 +52,6 @@ class DomBuilder {
             bouton.addEventListener('click', function () {
                 document.getElementById(target).classList.toggle('hide'); //affiche la liste
                 bouton.classList.toggle('show'); // rotation icon bouton
-                //document.getElementById('input-' + this.name).classList.toggle('show'); //changement couleur placeholder
             });  
         };      
     };

@@ -11,21 +11,25 @@ class SearchParams {
         this.allSelected = new Set([...this.getIngredients(),...this.getAppareils(),...this.getUstensiles()]);
     };
 
-    isValidForPrimarySearch() {
+    hasNoSearch() {
         return (
-            this.mainInput.trim().length > 2 &&
-            this.ingredients.length !== 0 ||
-            this.appareils.length !== 0 ||
-            this.ustensiles.length !== 0
-        )
+            this.mainInput.trim().length <= 2 &&
+            this.ingredients.size == 0 &&
+            this.appareils.size == 0 &&
+            this.ustensiles.size == 0
+        );
+    };
+
+    isValidForPrimarySearch() {
+        return this.mainInput.trim().length > 2;
     };
 
     isValidForSecondarySearch() {
+        console.dir(this.appareils.size)
         return (
-            this.mainInput.trim().length === '' && 
-            this.ingredients.length !== 0 ||
-            this.appareils.length !== 0 ||
-            this.ustensiles.length !== 0
+            this.ingredients.size !== 0 ||
+            this.appareils.size !== 0 ||
+            this.ustensiles.size !== 0
         );
     }
 

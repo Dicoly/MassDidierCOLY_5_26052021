@@ -11,7 +11,8 @@ class SearchEvent {
     launchSearch() {
         const searchResult = this.searchService.launch();
         this.domBuilder.afficherLesRecettes(searchResult.recipes);
-        this.domBuilder.creerLesTroisListesSelect(searchResult);
+        this.domBuilder.creerLesTroisListesSelect(searchResult, this.searchService.searchParams);
+        return this;
     }
 
     watch() {
@@ -45,6 +46,7 @@ class SearchEvent {
         [...document.getElementsByClassName('inputFiltres')].forEach((element) => {
             element.addEventListener('keyup', TagsResearch.filterTags);
         });
+        return this;
     }
 }
 
