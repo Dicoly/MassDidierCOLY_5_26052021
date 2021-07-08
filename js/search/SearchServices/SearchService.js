@@ -2,7 +2,7 @@ import RecipesDB from "../../data/recipes.js";
 import SearchParams from "../SearchParams.js";
 import SearchResult from "../SearchResult.js";
 import MainSearch from "./MainSearch.js";
-import SecondarySearch from "./SecondarySearch.js"
+//import SecondarySearch from "./SecondarySearch.js"
 
 class SearchService {
     constructor() {
@@ -28,7 +28,7 @@ class SearchService {
         }
         // si uniquement tag selectionné
         if (this.searchParams.isValidForSecondarySearch()) {            
-            this.searchResultSecondary = SecondarySearch.research(this.searchResultFinal, this.searchParams);
+            this.searchResultSecondary = MainSearch.tagsresearch(this.recipes, this.searchParams);
             this.searchResultFinal = this.searchResultSecondary;
         }
          this.searchResult.buildRecipes(this.searchResultFinal);
