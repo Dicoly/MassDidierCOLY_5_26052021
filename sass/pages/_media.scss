@@ -3,23 +3,6 @@
     .main {
         margin: 0 2rem;
     }
-    .filtres {
-        &__select {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            &__selected {
-                margin: 1%;
-                margin-left: 0;
-                padding: 1px 8px;
-                border-radius: 5px;
-                background-color: $color-ingredients;
-                .fa-times-circle {
-                    padding: 5px;
-                }
-            }
-        }
-    }
     .selectList {
         ul li {
             width: 100%;

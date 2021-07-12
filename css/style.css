@@ -282,6 +282,20 @@ input {
   margin-top: -7.5rem;
 }
 
+#notFoundRecipes {
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid #e7e7e7;
+  background-color: #e7e7e7;
+  padding: 1rem;
+  margin: 3rem 13.8rem;
+}
+
+.notFound {
+  display: none;
+}
+
 @keyframes btnFiltres {
   0% {
     transform: rotate(0deg);
@@ -296,22 +310,6 @@ input {
 @media screen and (max-width: 768px) {
   .main {
     margin: 0 2rem;
-  }
-
-  .filtres__select {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .filtres__select__selected {
-    margin: 1%;
-    margin-left: 0;
-    padding: 1px 8px;
-    border-radius: 5px;
-    background-color: #3282f7;
-  }
-  .filtres__select__selected .fa-times-circle {
-    padding: 5px;
   }
 
   .selectList ul li {

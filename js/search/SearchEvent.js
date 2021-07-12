@@ -26,7 +26,7 @@ class SearchEvent {
             this.launchSearch();
         });
 
-        // Au click sur l'element seleectionné pour la retirer des tags selecrtionnés
+        // Au click sur l'element selectionné pour la retirer des tags selecrtionnés
         document.getElementById('selectContainer').addEventListener('click', () => {
                 this.launchSearch();
         });

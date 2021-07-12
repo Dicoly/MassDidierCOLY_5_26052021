@@ -11,21 +11,11 @@ class SearchParams {
         this.allSelected = new Set([...this.getIngredients(),...this.getAppareils(),...this.getUstensiles()]);
     };
 
-    hasNoSearch() {
-        return (
-            this.mainInput.trim().length <= 2 &&
-            this.ingredients.size == 0 &&
-            this.appareils.size == 0 &&
-            this.ustensiles.size == 0
-        );
-    };
-
     isValidForPrimarySearch() {
         return this.mainInput.trim().length > 2;
     };
 
     isValidForSecondarySearch() {
-        console.dir(this.appareils.size)
         return (
             this.ingredients.size !== 0 ||
             this.appareils.size !== 0 ||
@@ -40,7 +30,6 @@ class SearchParams {
         const ingredientsDom = Array.from(document.querySelectorAll('#detailList-ingredients .selectListItemSelected'))
         ingredientsDom.forEach( element => {
         ingredients.add(element.innerHTML);
-        console.dir(ingredientsDom)
         });
         return ingredients;
     };
@@ -50,7 +39,6 @@ class SearchParams {
         const appareilsDom = Array.from(document.querySelectorAll('#detailList-appareils .selectListItemSelected'))
         appareilsDom.forEach( element => {
         appareils.add(element.innerHTML);
-        console.dir(appareilsDom)
         });
         return appareils;
     };
@@ -60,7 +48,6 @@ class SearchParams {
         const ustensilesDom = Array.from(document.querySelectorAll('#detailList-ustensiles .selectListItemSelected'))
         ustensilesDom.forEach( element => {
         ustensiles.add(element.innerHTML);
-        console.dir(ustensilesDom)
         });
         return ustensiles;
         

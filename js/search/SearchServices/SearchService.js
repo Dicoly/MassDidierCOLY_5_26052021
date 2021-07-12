@@ -7,31 +7,36 @@ import SecondarySearch from "./SecondarySearch.js"
 class SearchService {
     constructor() {
         this.recipes = RecipesDB;
-        this.searchResultFinal = this.recipes; //50
     }
 
     launch() {
         this.searchParams = new SearchParams();
         this.searchResult = new SearchResult();
-        console.log('vide' + this.searchParams.hasNoSearch());
+        this.searchResultFinal = RecipesDB;//50
         console.log('input' +this.searchParams.isValidForPrimarySearch());
         console.log('tag' +this.searchParams.isValidForSecondarySearch());
-        
-        if (this.searchParams.hasNoSearch()) {
-            this.searchResultFinal = RecipesDB; //50
-        }
 
         // si texte présent dans le input principal lance une recherche
         if (this.searchParams.isValidForPrimarySearch()) {
             this.searchResultPrincipale = MainSearch.research(this.searchParams); //30
             this.searchResultFinal = this.searchResultPrincipale;
+            
+            if (this.searchResultFinal.size === 0) {
+                document.getElementById('notFoundRecipes').classList.remove('notFound');
+            }
         }
+
+        if (this.searchResultFinal.size !== 0) {
+            document.getElementById('notFoundRecipes').classList.add('notFound')
+        }
+
         // si uniquement tag selectionné
         if (this.searchParams.isValidForSecondarySearch()) {            
             this.searchResultSecondary = SecondarySearch.research(this.searchResultFinal, this.searchParams);
             this.searchResultFinal = this.searchResultSecondary;
         }
-         this.searchResult.buildRecipes(this.searchResultFinal);
+
+        this.searchResult.buildRecipes(this.searchResultFinal);
         console.dir(this);
         return this.searchResult;
     }
