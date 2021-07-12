@@ -6,17 +6,17 @@ class MainSearch {
         this.recipes = recipes;
 
         this.recipes.forEach(recipe => {
-            const recipeName = recipe.name.toLowerCase();
-            const inputValue = searchParams.mainInput.toLowerCase();
+            const recipeName = recipe.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+            const inputValue = searchParams.mainInput.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
             if (recipeName.indexOf(inputValue) > -1) {
                 this.filteredRecipes.add(recipe);
-            } else if (recipe.description.toLowerCase().indexOf(inputValue) > -1) {
+            } else if (recipe.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(inputValue) > -1) {
                 this.filteredRecipes.add(recipe);
             }
             else {
                 recipe.ingredients.forEach((element) => {
-                    if (element.ingredient.toLowerCase().indexOf(inputValue) > -1) {
+                    if (element.ingredient.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(inputValue) > -1) {
                         this.filteredRecipes.add(recipe);
                     }
                 }); 

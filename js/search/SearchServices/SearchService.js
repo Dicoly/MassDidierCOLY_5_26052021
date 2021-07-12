@@ -20,13 +20,10 @@ class SearchService {
         if (this.searchParams.isValidForPrimarySearch()) {
             this.searchResultPrincipale = MainSearch.research(this.searchParams); //30
             this.searchResultFinal = this.searchResultPrincipale;
-            
-            if (this.searchResultFinal.size === 0) {
-                document.getElementById('notFoundRecipes').classList.remove('notFound');
-            }
         }
-
-        if (this.searchResultFinal.size !== 0) {
+        if (this.searchResultFinal.size === 0) {
+            document.getElementById('notFoundRecipes').classList.remove('notFound');
+        } else {
             document.getElementById('notFoundRecipes').classList.add('notFound')
         }
 
