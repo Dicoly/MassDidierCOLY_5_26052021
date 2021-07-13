@@ -9,23 +9,18 @@ class MainSearch {
             const recipeName = recipe.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
             const inputValue = searchParams.mainInput.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
-            if (recipeName.indexOf(inputValue) > -1) {
+            if (recipeName.indexOf(inputValue) > -1
+                || recipe.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(inputValue) > -1
+                || recipe.ingredients.find((element) => 
+                    element.ingredient.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(inputValue) > -1)
+            ) {
                 this.filteredRecipes.add(recipe);
-            } else if (recipe.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(inputValue) > -1) {
-                this.filteredRecipes.add(recipe);
-            }
-            else {
-                recipe.ingredients.forEach((element) => {
-                    if (element.ingredient.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").indexOf(inputValue) > -1) {
-                        this.filteredRecipes.add(recipe);
-                    }
-                }); 
             }
         });
         return this.filteredRecipes;
     };
 
-    static tagsresearch(searchResult, searchParams) {
+    static tagsResearch(searchResult, searchParams) {
         this.SearchSecondaryResult = new Set();
 
         searchResult.forEach(recipe => {

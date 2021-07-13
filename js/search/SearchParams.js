@@ -11,15 +11,6 @@ class SearchParams {
         this.allSelected = new Set([...this.getIngredients(),...this.getAppareils(),...this.getUstensiles()]);
     };
 
-    hasNoSearch() {
-        return (
-            this.mainInput.trim().length <= 2 &&
-            this.ingredients.size == 0 &&
-            this.appareils.size == 0 &&
-            this.ustensiles.size == 0
-        );
-    };
-
     isValidForPrimarySearch() {
         return this.mainInput.trim().length > 2;
     };
