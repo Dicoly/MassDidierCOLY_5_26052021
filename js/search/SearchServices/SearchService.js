@@ -21,16 +21,17 @@ class SearchService {
             this.searchResultPrincipale = MainSearch.research(this.searchParams); //30
             this.searchResultFinal = this.searchResultPrincipale;
         }
-        if (this.searchResultFinal.size === 0) {
-            document.getElementById('notFoundRecipes').classList.remove('notFound');
-        } else {
-            document.getElementById('notFoundRecipes').classList.add('notFound')
-        }
-
+        
         // si uniquement tag selectionné
         if (this.searchParams.isValidForSecondarySearch()) {            
             this.searchResultSecondary = SecondarySearch.research(this.searchResultFinal, this.searchParams);
             this.searchResultFinal = this.searchResultSecondary;
+        }
+        
+        if (this.searchResultFinal.size === 0) {
+            document.getElementById('notFoundRecipes').classList.remove('notFound');
+        } else {
+            document.getElementById('notFoundRecipes').classList.add('notFound')
         }
 
         this.searchResult.buildRecipes(this.searchResultFinal);
