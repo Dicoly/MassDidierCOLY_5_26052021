@@ -18,6 +18,16 @@ class SearchParams {
     isValidForSecondarySearch() {
         console.dir(this.appareils.size)
         return (
+            this.mainInput === '' &&
+            this.ingredients.size !== 0 ||
+            this.appareils.size !== 0 ||
+            this.ustensiles.size !== 0
+        );
+    }
+
+    isValidForTertiarySearch() {
+        return (
+            this.mainInput.trim().length > 2 &&
             this.ingredients.size !== 0 ||
             this.appareils.size !== 0 ||
             this.ustensiles.size !== 0
