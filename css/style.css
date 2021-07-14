@@ -312,12 +312,16 @@ input {
     margin: 0 2rem;
   }
 
+  .selectList {
+    width: 100%;
+  }
   .selectList ul li {
     width: 100%;
   }
 
   #listRecipiesContainer {
     flex-direction: column;
+    margin-top: 15rem;
   }
 
   .recettesContainer {
@@ -327,11 +331,32 @@ input {
   .figure {
     width: 100%;
   }
+
+  .filtresContainer {
+    flex-direction: column;
+  }
+
+  .inputFiltres {
+    width: 100%;
+  }
 }
 /*Media Queries tablette*/
 @media screen and (min-width: 768px) {
   .selectList ul li {
     width: 50%;
+  }
+
+  .main {
+    margin: 0 1.5rem;
+  }
+}
+@media screen and (max-width: 830px) {
+  #listRecipiesContainer {
+    flex-direction: column;
+  }
+
+  .figure {
+    width: 100%;
   }
 }
 /*Media Queries desktop*/
