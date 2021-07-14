@@ -3,36 +3,28 @@
     .main {
         margin: 0 2rem;
     }
-    .filtres {
-        &__select {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            &__selected {
-                margin: 1%;
-                margin-left: 0;
-                padding: 1px 8px;
-                border-radius: 5px;
-                background-color: $color-ingredients;
-                .fa-times-circle {
-                    padding: 5px;
-                }
-            }
-        }
-    }
+    
     .selectList {
+        width: 100%;
         ul li {
             width: 100%;
         }
     }
     #listRecipiesContainer {
         flex-direction: column;
+        margin-top: 15rem;
     }
     .recettesContainer {
         margin-right: 0rem;
     }
 
     .figure {
+        width: 100%;
+    }
+    .filtresContainer {
+        flex-direction: column;
+    }
+    .inputFiltres {
         width: 100%;
     }
 }
@@ -43,6 +35,18 @@
         ul li {
             width: 50%;
         }
+    }
+    .main {
+        margin: 0 1.5rem;
+    }
+}
+
+@media screen and (max-width: $breakpoint-tabletteplus) {
+    #listRecipiesContainer {
+        flex-direction: column;
+    }
+    .figure {
+        width: 100%;
     }
 }
 
