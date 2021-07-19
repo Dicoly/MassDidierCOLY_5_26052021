@@ -11,7 +11,9 @@ class SearchEvent {
     launchSearch() {
         const searchResult = this.searchService.launch();
         this.domBuilder.afficherLesRecettes(searchResult.recipes);
-        this.domBuilder.creerLesTroisListesSelect(searchResult, this.searchService.searchParams);
+        this.domBuilder.creerLesTroisListesSelect(
+            searchResult, this.searchService.searchParams
+        );
         return this;
     }
 

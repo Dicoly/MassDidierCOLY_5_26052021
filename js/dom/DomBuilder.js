@@ -17,14 +17,22 @@ class DomBuilder {
 
     //////////// creer Les Trois Listes Select
     creerLesTroisListesSelect(ResultatDeLaRecherche, searchParams) {
-        this.remplirListeDeroulante('ingredients', ResultatDeLaRecherche.ingredients, searchParams.ingredients);
-        this.remplirListeDeroulante('appareils', ResultatDeLaRecherche.appareils, searchParams.appareils);
-        this.remplirListeDeroulante('ustensiles', ResultatDeLaRecherche.ustensiles, searchParams.ustensiles);
+        this.remplirListeDeroulante(
+            'ingredients', ResultatDeLaRecherche.ingredients, searchParams.ingredients
+        );
+
+        this.remplirListeDeroulante(
+            'appareils', ResultatDeLaRecherche.appareils, searchParams.appareils
+        );
+
+        this.remplirListeDeroulante(
+            'ustensiles', ResultatDeLaRecherche.ustensiles, searchParams.ustensiles
+        );
     };
 
     // Creation  les LI dans la liste des 
     remplirListeDeroulante(name, elements, elementsSelected) {
- 
+        
         let htmlContent = '';
         //Ajout des LI dans la liste deroulante
         for (let element of elements) {

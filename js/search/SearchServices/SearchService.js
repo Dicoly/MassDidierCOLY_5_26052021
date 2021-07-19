@@ -18,13 +18,18 @@ class SearchService {
 
         // si texte présent dans le input principal lance une recherche
         if (this.searchParams.isValidForPrimarySearch()) {
-            this.searchResultPrincipale = MainSearch.research(this.searchParams); //30
+            this.searchResultPrincipale = MainSearch.research(
+                this.searchParams
+            ); //30
             this.searchResultFinal = this.searchResultPrincipale;
         }
         
         // si uniquement tag selectionné
         if (this.searchParams.isValidForSecondarySearch()) {            
-            this.searchResultSecondary = SecondarySearch.research(this.searchResultFinal, this.searchParams);
+            this.searchResultSecondary = SecondarySearch.research(
+                this.searchResultFinal, 
+                this.searchParams
+            );
             this.searchResultFinal = this.searchResultSecondary;
         }
         
