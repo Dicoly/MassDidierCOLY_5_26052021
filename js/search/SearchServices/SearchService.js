@@ -6,7 +6,6 @@ import MainSearch from "./MainSearch.js";
 class SearchService {
     constructor() {
         this.recipes = RecipesDB;
-        this.searchResultFinal = this.recipes;;
     }
 
     launch() {
@@ -18,14 +17,12 @@ class SearchService {
         if (this.searchParams.isValidForPrimarySearch()) {
             this.searchResultPrincipale = MainSearch.research(this.searchParams); //30
             this.searchResultFinal = this.searchResultPrincipale;
-            if (this.searchParams.isValidForTertiarySearch()) {            
-                this.searchResultTertiary = MainSearch.tagsResearch(this.searchResultFinal, this.searchParams); //4
-                this.searchResultFinal = this.searchResultTertiary;
-            }      
         }
         // si uniquement tag selectionné
         if (this.searchParams.isValidForSecondarySearch()) {            
-            this.searchResultSecondary = MainSearch.tagsResearch(this.recipes, this.searchParams);
+            this.searchResultSecondary = MainSearch.tagsResearch(
+                this.searchResultFinal, this.searchParams
+            );
             this.searchResultFinal = this.searchResultSecondary;
         }
         //Affiche message recette non trouvée

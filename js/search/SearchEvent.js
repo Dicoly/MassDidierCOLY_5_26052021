@@ -11,16 +11,13 @@ class SearchEvent {
     launchSearch() {
         const searchResult = this.searchService.launch();
         this.domBuilder.afficherLesRecettes(searchResult.recipes);
-        this.domBuilder.creerLesTroisListesSelect(searchResult, this.searchService.searchParams);
+        this.domBuilder.creerLesTroisListesSelect(
+            searchResult, this.searchService.searchParams
+        );
         return this;
     }
 
     watch() {
-        //Au click sur le bouton Search pour lancer la recherche
-        document.getElementById('launchSearch').addEventListener('click', () => {
-            this.launchSearch();
-        });
-
         //Pour la recherche principale avec le input.
         document.getElementById('inputSearchBar').addEventListener('keyup', () => {
             this.launchSearch();

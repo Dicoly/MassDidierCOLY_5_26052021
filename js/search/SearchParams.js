@@ -8,7 +8,11 @@ class SearchParams {
         this.ingredients = this.getIngredients();
         this.appareils = this.getAppareils();
         this.ustensiles = this.getUstensiles();
-        this.allSelected = new Set([...this.getIngredients(),...this.getAppareils(),...this.getUstensiles()]);
+        this.allSelected = new Set([
+            ...this.getIngredients(),
+            ...this.getAppareils(),
+            ...this.getUstensiles()
+        ]);
     };
 
     isValidForPrimarySearch() {
@@ -16,18 +20,7 @@ class SearchParams {
     };
 
     isValidForSecondarySearch() {
-        console.dir(this.appareils.size)
         return (
-            this.mainInput === '' &&
-            this.ingredients.size !== 0 ||
-            this.appareils.size !== 0 ||
-            this.ustensiles.size !== 0
-        );
-    }
-
-    isValidForTertiarySearch() {
-        return (
-            this.mainInput.trim().length > 2 &&
             this.ingredients.size !== 0 ||
             this.appareils.size !== 0 ||
             this.ustensiles.size !== 0
@@ -37,34 +30,45 @@ class SearchParams {
     //retourne un tableau des éléments selectionnés pour une catégorie
     getIngredients() {
         const ingredients = new Set();
+
         //boucle sur le tableau précédent et pour chaque element, stocke l'element selectionné dans un nouveau tableau
-        const ingredientsDom = Array.from(document.querySelectorAll('#detailList-ingredients .selectListItemSelected'))
+        const ingredientsDom = Array.from(
+            document.querySelectorAll('#tagsSelected .tagSelected.ingredients')
+        )
+        
         ingredientsDom.forEach( element => {
-        ingredients.add(element.innerHTML);
-        console.dir(ingredientsDom)
+            ingredients.add(element.innerText);
         });
+
         return ingredients;
     };
 
     getAppareils() {
         const appareils = new Set();
-        const appareilsDom = Array.from(document.querySelectorAll('#detailList-appareils .selectListItemSelected'))
+
+        const appareilsDom = Array.from(
+            document.querySelectorAll('#tagsSelected .tagSelected.appareils')
+        )
+
         appareilsDom.forEach( element => {
-        appareils.add(element.innerHTML);
-        console.dir(appareilsDom)
+            appareils.add(element.innerText);
         });
+
         return appareils;
     };
 
     getUstensiles() {
         const ustensiles = new Set();
-        const ustensilesDom = Array.from(document.querySelectorAll('#detailList-ustensiles .selectListItemSelected'))
-        ustensilesDom.forEach( element => {
-        ustensiles.add(element.innerHTML);
-        console.dir(ustensilesDom)
-        });
-        return ustensiles;
+
+        const ustensilesDom = Array.from(
+            document.querySelectorAll('#tagsSelected .tagSelected.ustensiles')
+        )
         
+        ustensilesDom.forEach( element => {
+            ustensiles.add(element.innerText);
+        });
+
+        return ustensiles;
     };
 }
 

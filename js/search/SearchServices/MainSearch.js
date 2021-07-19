@@ -33,7 +33,9 @@ class MainSearch {
             
             let indexOfRecipe = recipe.id - 1;
 
-            if (Array.from(searchParams.allSelected).every(element => Array.from(recipes[indexOfRecipe].allProduct).includes(element))) {
+            if (Array.from(searchParams.allSelected).every(element => Array.from(
+                recipes[indexOfRecipe].allProduct).includes(element))
+            ) {
                 this.SearchSecondaryResult.add(recipe);
             }
         });
