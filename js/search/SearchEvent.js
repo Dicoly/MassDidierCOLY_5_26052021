@@ -18,11 +18,6 @@ class SearchEvent {
     }
 
     watch() {
-        //Au click sur le bouton Search pour lancer la recherche
-        document.getElementById('launchSearch').addEventListener('click', () => {
-            this.launchSearch();
-        });
-
         //Pour la recherche principale avec le input.
         document.getElementById('inputSearchBar').addEventListener('keyup', () => {
             this.launchSearch();
